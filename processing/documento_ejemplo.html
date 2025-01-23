@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.554">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Equipo EDUMER">
 <meta name="dcterms.date" content="2025-01-23">
+
 <title>Análisis de datos</title>
 <style>
 code{white-space: pre-wrap;}
@@ -75,6 +78,7 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
+
 <script src="documento_ejemplo_files/libs/clipboard/clipboard.min.js"></script>
 <script src="documento_ejemplo_files/libs/quarto-html/quarto.js"></script>
 <script src="documento_ejemplo_files/libs/quarto-html/popper.min.js"></script>
@@ -84,7 +88,12 @@ div.csl-indent {
 <link href="documento_ejemplo_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="documento_ejemplo_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="documento_ejemplo_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="documento_ejemplo_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+<link href="documento_ejemplo_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
     // MathJax Typeset
@@ -110,12 +119,15 @@ window.Quarto = {
   typesetMath
 };
 </script>
+
 </head>
+
 <body>
 
-<header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Análisis de datos</h1>
+      <div class="quarto-title-block"><div><h1 class="title">Análisis de datos</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
             <p class="subtitle lead">Taller Introducción a Quarto y Github</p>
                       </div>
   </div>
@@ -143,65 +155,69 @@ window.Quarto = {
   
   </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2"><h2 id="toc-title">Contents</h2>
+  <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Contents</h2>
    
   <ul>
-<li><a href="#presentaci%C3%B3n" id="toc-presentación" class="nav-link active" data-scroll-target="#presentaci%C3%B3n"><span class="header-section-number">1</span> Presentación</a></li>
-  <li><a href="#librer%C3%ADas" id="toc-librerías" class="nav-link" data-scroll-target="#librer%C3%ADas"><span class="header-section-number">2</span> Librerías</a></li>
+  <li><a href="#presentación" id="toc-presentación" class="nav-link active" data-scroll-target="#presentación"><span class="header-section-number">1</span> Presentación</a></li>
+  <li><a href="#librerías" id="toc-librerías" class="nav-link" data-scroll-target="#librerías"><span class="header-section-number">2</span> Librerías</a></li>
   <li><a href="#datos" id="toc-datos" class="nav-link" data-scroll-target="#datos"><span class="header-section-number">3</span> Datos</a></li>
-  <li>
-<a href="#an%C3%A1lisis" id="toc-análisis" class="nav-link" data-scroll-target="#an%C3%A1lisis"><span class="header-section-number">4</span> Análisis</a>
+  <li><a href="#análisis" id="toc-análisis" class="nav-link" data-scroll-target="#análisis"><span class="header-section-number">4</span> Análisis</a>
   <ul>
-<li>
-<a href="#descriptivos" id="toc-descriptivos" class="nav-link" data-scroll-target="#descriptivos"><span class="header-section-number">4.1</span> Descriptivos</a>
+  <li><a href="#descriptivos" id="toc-descriptivos" class="nav-link" data-scroll-target="#descriptivos"><span class="header-section-number">4.1</span> Descriptivos</a>
   <ul class="collapse">
-<li><a href="#univariados" id="toc-univariados" class="nav-link" data-scroll-target="#univariados"><span class="header-section-number">4.1.1</span> Univariados</a></li>
+  <li><a href="#univariados" id="toc-univariados" class="nav-link" data-scroll-target="#univariados"><span class="header-section-number">4.1.1</span> Univariados</a></li>
   <li><a href="#bivariados" id="toc-bivariados" class="nav-link" data-scroll-target="#bivariados"><span class="header-section-number">4.1.2</span> Bivariados</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#multivariados" id="toc-multivariados" class="nav-link" data-scroll-target="#multivariados"><span class="header-section-number">4.2</span> Multivariados</a>
+  </ul></li>
+  <li><a href="#multivariados" id="toc-multivariados" class="nav-link" data-scroll-target="#multivariados"><span class="header-section-number">4.2</span> Multivariados</a>
   <ul class="collapse">
-<li><a href="#an%C3%A1lisis-factorial-confirmatorio" id="toc-análisis-factorial-confirmatorio" class="nav-link" data-scroll-target="#an%C3%A1lisis-factorial-confirmatorio"><span class="header-section-number">4.2.1</span> Análisis Factorial Confirmatorio</a></li>
-  </ul>
-</li>
-  </ul>
-</li>
+  <li><a href="#análisis-factorial-confirmatorio" id="toc-análisis-factorial-confirmatorio" class="nav-link" data-scroll-target="#análisis-factorial-confirmatorio"><span class="header-section-number">4.2.1</span> Análisis Factorial Confirmatorio</a></li>
+  </ul></li>
+  </ul></li>
   <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">5</span> Referencias</a></li>
-  </ul><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="documento_ejemplo.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="documento_ejemplo.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </div>
-<main class="content quarto-banner-title-block" id="quarto-document-content"><section id="presentación" class="level1" data-number="1"><h1 data-number="1">
-<span class="header-section-number">1</span> Presentación</h1>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="presentación" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Presentación</h1>
 <p>Este documento de ejemplo presenta el código empleado para un análisis de datos en el marco del taller de Introducción a Quarto y Github por parte del equipo del <a href="https://github.com/educacion-meritocracia">Proyecto Fondecyt EDUMER</a>. El objetivo del análisis es evaluar un modelo de medición sobre percepciones y preferencias sobre meritocracia. El conjunto de datos utilizado, <code>db_long_proc.RData</code>, proviene de una fuente que fue procesada previamente.</p>
-</section><section id="librerías" class="level1" data-number="2"><h1 data-number="2">
-<span class="header-section-number">2</span> Librerías</h1>
-<p>En primer lugar, cargamos las librerías necesarias. En este caso, utilizamos <code><a href="https://rdrr.io/pkg/pacman/man/p_load.html">pacman::p_load</a></code> para cargar y llamar a las librerías en un solo movimiento.</p>
+</section>
+<section id="librerías" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Librerías</h1>
+<p>En primer lugar, cargamos las librerías necesarias. En este caso, utilizamos <code>pacman::p_load</code> para cargar y llamar a las librerías en un solo movimiento.</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span> <span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="st"><a href="https://github.com/trinker/pacman">"pacman"</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"pacman"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">pacman</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pacman/man/p_load.html">p_load</a></span><span class="op">(</span><span class="va">tidyverse</span>,</span>
-<span>               <span class="va">sjmisc</span>, </span>
-<span>               <span class="va">lavaan</span>,</span>
-<span>               <span class="va">psych</span>,</span>
-<span>               <span class="va">corrplot</span>,</span>
-<span>               <span class="va">ggdist</span>,</span>
-<span>               <span class="va">patchwork</span>,</span>
-<span>               <span class="va">sjlabelled</span>,</span>
-<span>               <span class="va">semTools</span>,</span>
-<span>               <span class="va">gtools</span>,</span>
-<span>               <span class="va">RColorBrewer</span>,</span>
-<span>               <span class="va">skimr</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>scipen<span class="op">=</span><span class="fl">999</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span>list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span> <span class="fu">require</span>(<span class="st">"pacman"</span>)) <span class="fu">install.packages</span>(<span class="st">"pacman"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>               sjmisc, </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>               lavaan,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>               psych,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>               corrplot,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>               ggdist,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>               patchwork,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>               sjlabelled,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>               semTools,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>               gtools,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>               RColorBrewer,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>               skimr)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="datos" class="level1" data-number="3"><h1 data-number="3">
-<span class="header-section-number">3</span> Datos</h1>
+</section>
+<section id="datos" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Datos</h1>
 <p>Segundo, cargamos nuestra base de datos previamente procesada llamada <code>db_proc.RData</code> que se encuentra alojada en la ruta: <strong>output &gt; data</strong>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"../output/data/db_proc.RData"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">glimpse</span><span class="op">(</span><span class="va">db_proc</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">"../output/data/db_proc.RData"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(db_proc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 839
 Columns: 15
@@ -223,8 +239,9 @@ $ mjp               &lt;dbl&gt; 2.666667, 2.333333, 2.666667, 1.000000, 1.666667
 </div>
 </div>
 <p>Contamos con 839 casos o filas y con 15 variables o columnas.</p>
-</section><section id="análisis" class="level1" data-number="4"><h1 data-number="4">
-<span class="header-section-number">4</span> Análisis</h1>
+</section>
+<section id="análisis" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Análisis</h1>
 <p>En esta sección se muestran los análisis estadísticos. Primero, se realizan análisis descriptivos uni y bivariados. Luego, se hace un análisis factorial confirmatorio (CFA) <span class="citation" data-cites="brown_confirmatory_2015">(<a href="#ref-brown_confirmatory_2015" role="doc-biblioref">Brown, 2015</a>)</span> para ajustar un modelo de medición sobre percepciones y preferencias sobre meritocracia y no meritocracia propuesto por Castillo et al. <span class="citation" data-cites="castillo_multidimensional_2023">(<a href="#ref-castillo_multidimensional_2023" role="doc-biblioref">2023</a>)</span>.</p>
 <p>Los siguientes criterios de ajuste, tomados de Brown <span class="citation" data-cites="brown_confirmatory_2015">(<a href="#ref-brown_confirmatory_2015" role="doc-biblioref">2015</a>)</span> y Kline <span class="citation" data-cites="kline_principles_2023">(<a href="#ref-kline_principles_2023" role="doc-biblioref">2023</a>)</span>, orientan la evaluación de la adecuación del modelo:</p>
 <ul>
@@ -236,36 +253,40 @@ $ mjp               &lt;dbl&gt; 2.666667, 2.333333, 2.666667, 1.000000, 1.666667
 <li>Standardized Root Mean Square Residual (SRMR): &lt; 0.08</li>
 <li>Akaike Information Criterion (AIC): no fixed cutoff; lower values indicate better fit.</li>
 </ul>
-<section id="descriptivos" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="descriptivos">
-<span class="header-section-number">4.1</span> Descriptivos</h2>
-<section id="univariados" class="level3" data-number="4.1.1"><h3 data-number="4.1.1" class="anchored" data-anchor-id="univariados">
-<span class="header-section-number">4.1.1</span> Univariados</h3>
+<section id="descriptivos" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="descriptivos"><span class="header-section-number">4.1</span> Descriptivos</h2>
+<section id="univariados" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="univariados"><span class="header-section-number">4.1.1</span> Univariados</h3>
 <p>Los estadísticos descriptivos para las variables de interés se muestran en la <a href="#tbl-summary" class="quarto-xref">Table&nbsp;1</a>.</p>
 <div class="cell" data-tbl-cap-location="top">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">t1</span> <span class="op">&lt;-</span> <span class="va">db_proc</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">select</span><span class="op">(</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">skim</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">yank</span><span class="op">(</span><span class="st">"numeric"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">as_tibble</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">mutate</span><span class="op">(</span>range <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"("</span>,<span class="va">p0</span>,<span class="st">"-"</span>,<span class="va">p100</span>,<span class="st">")"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">mutate_if</span><span class="op">(</span>.predicate <span class="op">=</span> <span class="va">is.numeric</span>, .funs <span class="op">=</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">.</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">select</span><span class="op">(</span><span class="st">"Variable"</span> <span class="op">=</span> <span class="va">skim_variable</span>,<span class="st">"Mean"</span><span class="op">=</span> <span class="va">mean</span>, <span class="st">"SD"</span><span class="op">=</span><span class="va">sd</span>, <span class="st">"Range"</span> <span class="op">=</span> <span class="va">range</span>, <span class="st">"Histogram"</span><span class="op">=</span><span class="va">hist</span><span class="op">)</span> </span>
-<span></span>
-<span><span class="va">t1</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">kableExtra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>format <span class="op">=</span> <span class="st">"markdown"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>t1 <span class="ot">&lt;-</span> db_proc <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">yank</span>(<span class="st">"numeric"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">range =</span> <span class="fu">paste0</span>(<span class="st">"("</span>,p0,<span class="st">"-"</span>,p100,<span class="st">")"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_if</span>(<span class="at">.predicate =</span> is.numeric, <span class="at">.funs =</span> <span class="sc">~</span> <span class="fu">round</span>(.,<span class="dv">2</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="st">"Variable"</span> <span class="ot">=</span> skim_variable,<span class="st">"Mean"</span><span class="ot">=</span> mean, <span class="st">"SD"</span><span class="ot">=</span>sd, <span class="st">"Range"</span> <span class="ot">=</span> range, <span class="st">"Histogram"</span><span class="ot">=</span>hist) </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>t1 <span class="sc">%&gt;%</span> </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="at">format =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-summary" class="cell quarto-float anchored" data-tbl-cap-location="top">
-<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Estadísticos descriptivos
-</figcaption><div aria-describedby="tbl-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+<div aria-describedby="tbl-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <table class="do-not-create-environment cell table table-sm table-striped small">
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th style="text-align: left;">Variable</th>
 <th style="text-align: right;">Mean</th>
 <th style="text-align: right;">SD</th>
 <th style="text-align: left;">Range</th>
 <th style="text-align: left;">Histogram</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">perc_effort</td>
@@ -360,182 +381,193 @@ Table&nbsp;1: Estadísticos descriptivos
 </div>
 <p>En la <a href="#fig-likert" class="quarto-xref">Figure&nbsp;1</a> se muestra la distribución de las respuestas para los items de percepciones y preferencias meritocráticas y no meritocráticas.</p>
 <div class="cell fig-cap-location-top">
-<div class="sourceCode" id="cb5" data-cap-location="top"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">theme_set</span><span class="op">(</span><span class="fu">theme_ggdist</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">colors</span> <span class="op">&lt;-</span> <span class="fu">RColorBrewer</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">4</span>, name <span class="op">=</span> <span class="st">"RdBu"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">a</span> <span class="op">&lt;-</span> <span class="va">db_proc</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">select</span><span class="op">(</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"perc"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">sjPlot</span><span class="fu">::</span><span class="fu"><a href="https://strengejacke.github.io/sjPlot/reference/plot_likert.html">plot_likert</a></span><span class="op">(</span>geom.colors <span class="op">=</span> <span class="va">colors</span>,</span>
-<span>                      title <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a. Percepciones"</span><span class="op">)</span>,</span>
-<span>                      geom.size <span class="op">=</span> <span class="fl">0.8</span>,</span>
-<span>                      axis.labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Esfuerzo"</span>, <span class="st">"Talento"</span>, <span class="st">"Padres ricos"</span>, <span class="st">"Contactos"</span><span class="op">)</span>,</span>
-<span>                      catcount <span class="op">=</span> <span class="fl">4</span>,</span>
-<span>                      values  <span class="op">=</span>  <span class="st">"sum.outside"</span>,</span>
-<span>                      reverse.colors <span class="op">=</span> <span class="cn">F</span>,</span>
-<span>                      reverse.scale <span class="op">=</span> <span class="cn">T</span>,</span>
-<span>                      show.n <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>                      show.prc.sign <span class="op">=</span> <span class="cn">T</span></span>
-<span>                      <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">b</span> <span class="op">&lt;-</span> <span class="va">db_proc</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">select</span><span class="op">(</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"pref"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">sjPlot</span><span class="fu">::</span><span class="fu"><a href="https://strengejacke.github.io/sjPlot/reference/plot_likert.html">plot_likert</a></span><span class="op">(</span>geom.colors <span class="op">=</span> <span class="va">colors</span>,</span>
-<span>                      title <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"b. Preferencias"</span><span class="op">)</span>,</span>
-<span>                      geom.size <span class="op">=</span> <span class="fl">0.8</span>,</span>
-<span>                     axis.labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Esfuerzo"</span>, <span class="st">"Talento"</span>, <span class="st">"Padres ricos"</span>, <span class="st">"Contactos"</span><span class="op">)</span>,</span>
-<span>                      catcount <span class="op">=</span> <span class="fl">4</span>,</span>
-<span>                      values  <span class="op">=</span>  <span class="st">"sum.outside"</span>,</span>
-<span>                      reverse.colors <span class="op">=</span> <span class="cn">F</span>,</span>
-<span>                      reverse.scale <span class="op">=</span> <span class="cn">T</span>,</span>
-<span>                      show.n <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>                      show.prc.sign <span class="op">=</span> <span class="cn">T</span></span>
-<span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">likerplot</span> <span class="op">&lt;-</span> <span class="va">a</span> <span class="op">/</span> <span class="va">b</span> <span class="op">+</span> <span class="fu">plot_annotation</span><span class="op">(</span>caption <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"Fuente: Elaboración propia en base a Encuesta Panel EDUMER Ola 1"</span>,<span class="st">" (n = "</span>,<span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">db_proc</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="st">")"</span></span>
-<span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">likerplot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5" data-cap-location="top"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_ggdist</span>())</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>colors <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">n =</span> <span class="dv">4</span>, <span class="at">name =</span> <span class="st">"RdBu"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> db_proc <span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"perc"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  sjPlot<span class="sc">::</span><span class="fu">plot_likert</span>(<span class="at">geom.colors =</span> colors,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">title =</span> <span class="fu">c</span>(<span class="st">"a. Percepciones"</span>),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                      <span class="at">geom.size =</span> <span class="fl">0.8</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                      <span class="at">axis.labels =</span> <span class="fu">c</span>(<span class="st">"Esfuerzo"</span>, <span class="st">"Talento"</span>, <span class="st">"Padres ricos"</span>, <span class="st">"Contactos"</span>),</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                      <span class="at">catcount =</span> <span class="dv">4</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                      <span class="at">values  =</span>  <span class="st">"sum.outside"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                      <span class="at">reverse.colors =</span> F,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                      <span class="at">reverse.scale =</span> T,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>                      <span class="at">show.n =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>                      <span class="at">show.prc.sign =</span> T</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>                      ) <span class="sc">+</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> db_proc <span class="sc">%&gt;%</span> </span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"pref"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  sjPlot<span class="sc">::</span><span class="fu">plot_likert</span>(<span class="at">geom.colors =</span> colors,</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>                      <span class="at">title =</span> <span class="fu">c</span>(<span class="st">"b. Preferencias"</span>),</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>                      <span class="at">geom.size =</span> <span class="fl">0.8</span>,</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>                     <span class="at">axis.labels =</span> <span class="fu">c</span>(<span class="st">"Esfuerzo"</span>, <span class="st">"Talento"</span>, <span class="st">"Padres ricos"</span>, <span class="st">"Contactos"</span>),</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>                      <span class="at">catcount =</span> <span class="dv">4</span>,</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>                      <span class="at">values  =</span>  <span class="st">"sum.outside"</span>,</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>                      <span class="at">reverse.colors =</span> F,</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>                      <span class="at">reverse.scale =</span> T,</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>                      <span class="at">show.n =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>                      <span class="at">show.prc.sign =</span> T</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>likerplot <span class="ot">&lt;-</span> a <span class="sc">/</span> b <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">caption =</span> <span class="fu">paste0</span>(<span class="st">"Fuente: Elaboración propia en base a Encuesta Panel EDUMER Ola 1"</span>,<span class="st">" (n = "</span>,<span class="fu">dim</span>(db_proc)[<span class="dv">1</span>],<span class="st">")"</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>likerplot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-likert" class="quarto-figure quarto-figure-center quarto-float anchored" data-cap-location="top">
-<figure class="quarto-float quarto-float-fig figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-likert-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-likert-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Distribución de respuestas en items sobre percepciones y preferencias por meritocracia
-</figcaption><div aria-describedby="fig-likert-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+<div aria-describedby="fig-likert-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="documento_ejemplo_files/figure-html/fig-likert-1.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="bivariados" class="level3" data-number="4.1.2"><h3 data-number="4.1.2" class="anchored" data-anchor-id="bivariados">
-<span class="header-section-number">4.1.2</span> Bivariados</h3>
+</section>
+<section id="bivariados" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="bivariados"><span class="header-section-number">4.1.2</span> Bivariados</h3>
 <p>Respecto a la asociación entre variables, en la <a href="#fig-correlaciones" class="quarto-xref">Figure&nbsp;2</a> se muestra la matriz de correlaciones para las variables de interés.</p>
 <div class="cell fig-cap-location-top">
-<div class="sourceCode" id="cb6" data-cap-location="top"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> <span class="fu">psych</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/tetrachor.html">polychoric</a></span><span class="op">(</span><span class="va">db_proc</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">4</span><span class="op">:</span><span class="fl">11</span>,<span class="fl">15</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">P</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">db_proc</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">4</span><span class="op">:</span><span class="fl">11</span>,<span class="fl">15</span><span class="op">)</span><span class="op">]</span>, method <span class="op">=</span> <span class="st">"pearson"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/diag.html">diag</a></span><span class="op">(</span><span class="va">M</span><span class="op">$</span><span class="va">rho</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="cn">NA</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/diag.html">diag</a></span><span class="op">(</span><span class="va">P</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="cn">NA</span></span>
-<span></span>
-<span><span class="va">M</span><span class="op">$</span><span class="va">rho</span><span class="op">[</span><span class="fl">9</span>,<span class="op">]</span> <span class="op">&lt;-</span> <span class="va">P</span><span class="op">[</span><span class="fl">9</span>,<span class="op">]</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">M</span><span class="op">$</span><span class="va">rho</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A. Percepción Esfuerzo"</span>,</span>
-<span>                     <span class="st">"B. Percepción Talento"</span>,</span>
-<span>                     <span class="st">"C. Percepción Padres Ricos"</span>,</span>
-<span>                     <span class="st">"D. Percepción Contactos"</span>,</span>
-<span>                     <span class="st">"E. Preferencias Esfuerzo"</span>,</span>
-<span>                     <span class="st">"F. Preferencias Talento"</span>,</span>
-<span>                     <span class="st">"G. Preferencias Padres Ricos"</span>,</span>
-<span>                     <span class="st">"H. Preferencias Contactos"</span>,</span>
-<span>                     <span class="st">"I. Market Justice Preferences"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co">#set Column names of the matrix</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">M</span><span class="op">$</span><span class="va">rho</span><span class="op">)</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"(A)"</span>, <span class="st">"(B)"</span>,<span class="st">"(C)"</span>,<span class="st">"(D)"</span>,<span class="st">"(E)"</span>,<span class="st">"(F)"</span>,<span class="st">"(G)"</span>,</span>
-<span>                       <span class="st">"(H)"</span>,<span class="st">"(I)"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">P</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A. Percepción Esfuerzo"</span>,</span>
-<span>                     <span class="st">"B. Percepción Talento"</span>,</span>
-<span>                     <span class="st">"C. Percepción Padres Ricos"</span>,</span>
-<span>                     <span class="st">"D. Percepción Contactos"</span>,</span>
-<span>                     <span class="st">"E. Preferencias Esfuerzo"</span>,</span>
-<span>                     <span class="st">"F. Preferencias Talento"</span>,</span>
-<span>                     <span class="st">"G. Preferencias Padres Ricos"</span>,</span>
-<span>                     <span class="st">"H. Preferencias Contactos"</span>,</span>
-<span>                     <span class="st">"I. Market Justice Preferences"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co">#set Column names of the matrix</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">P</span><span class="op">)</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"(A)"</span>, <span class="st">"(B)"</span>,<span class="st">"(C)"</span>,<span class="st">"(D)"</span>,<span class="st">"(E)"</span>,<span class="st">"(F)"</span>,<span class="st">"(G)"</span>,</span>
-<span>                    <span class="st">"(H)"</span>,<span class="st">"(I)"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">testp</span> <span class="op">&lt;-</span> <span class="fu">cor.mtest</span><span class="op">(</span><span class="va">M</span><span class="op">$</span><span class="va">rho</span>, conf.level <span class="op">=</span> <span class="fl">0.95</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co">#Plot the matrix using corrplot</span></span>
-<span><span class="fu">corrplot</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/corrplot/man/corrplot.html">corrplot</a></span><span class="op">(</span><span class="va">M</span><span class="op">$</span><span class="va">rho</span>,</span>
-<span>                   method <span class="op">=</span> <span class="st">"color"</span>,</span>
-<span>                   addCoef.col <span class="op">=</span> <span class="st">"black"</span>,</span>
-<span>                   type <span class="op">=</span> <span class="st">"upper"</span>,</span>
-<span>                   tl.col <span class="op">=</span> <span class="st">"black"</span>,</span>
-<span>                   col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/colorRamp.html">colorRampPalette</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#E16462"</span>, <span class="st">"white"</span>, <span class="st">"#0D0887"</span><span class="op">)</span><span class="op">)</span><span class="op">(</span><span class="fl">12</span><span class="op">)</span>,</span>
-<span>                   bg <span class="op">=</span> <span class="st">"white"</span>,</span>
-<span>                   na.label <span class="op">=</span> <span class="st">"-"</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6" data-cap-location="top"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">polychoric</span>(db_proc[,<span class="fu">c</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">11</span>,<span class="dv">15</span>)])</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>P <span class="ot">&lt;-</span> <span class="fu">cor</span>(db_proc[,<span class="fu">c</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">11</span>,<span class="dv">15</span>)], <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(M<span class="sc">$</span>rho) <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(P) <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>M<span class="sc">$</span>rho[<span class="dv">9</span>,] <span class="ot">&lt;-</span> P[<span class="dv">9</span>,]</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(M<span class="sc">$</span>rho) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A. Percepción Esfuerzo"</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"B. Percepción Talento"</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"C. Percepción Padres Ricos"</span>,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"D. Percepción Contactos"</span>,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"E. Preferencias Esfuerzo"</span>,</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"F. Preferencias Talento"</span>,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"G. Preferencias Padres Ricos"</span>,</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"H. Preferencias Contactos"</span>,</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"I. Market Justice Preferences"</span>)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co">#set Column names of the matrix</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(M<span class="sc">$</span>rho) <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"(A)"</span>, <span class="st">"(B)"</span>,<span class="st">"(C)"</span>,<span class="st">"(D)"</span>,<span class="st">"(E)"</span>,<span class="st">"(F)"</span>,<span class="st">"(G)"</span>,</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"(H)"</span>,<span class="st">"(I)"</span>)</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(P) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A. Percepción Esfuerzo"</span>,</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"B. Percepción Talento"</span>,</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"C. Percepción Padres Ricos"</span>,</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"D. Percepción Contactos"</span>,</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"E. Preferencias Esfuerzo"</span>,</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"F. Preferencias Talento"</span>,</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"G. Preferencias Padres Ricos"</span>,</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"H. Preferencias Contactos"</span>,</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"I. Market Justice Preferences"</span>)</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="co">#set Column names of the matrix</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(P) <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"(A)"</span>, <span class="st">"(B)"</span>,<span class="st">"(C)"</span>,<span class="st">"(D)"</span>,<span class="st">"(E)"</span>,<span class="st">"(F)"</span>,<span class="st">"(G)"</span>,</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"(H)"</span>,<span class="st">"(I)"</span>)</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>testp <span class="ot">&lt;-</span> <span class="fu">cor.mtest</span>(M<span class="sc">$</span>rho, <span class="at">conf.level =</span> <span class="fl">0.95</span>)</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot the matrix using corrplot</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>corrplot<span class="sc">::</span><span class="fu">corrplot</span>(M<span class="sc">$</span>rho,</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>                   <span class="at">method =</span> <span class="st">"color"</span>,</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>                   <span class="at">addCoef.col =</span> <span class="st">"black"</span>,</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>                   <span class="at">type =</span> <span class="st">"upper"</span>,</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>                   <span class="at">tl.col =</span> <span class="st">"black"</span>,</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>                   <span class="at">col =</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">"#E16462"</span>, <span class="st">"white"</span>, <span class="st">"#0D0887"</span>))(<span class="dv">12</span>),</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>                   <span class="at">bg =</span> <span class="st">"white"</span>,</span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>                   <span class="at">na.label =</span> <span class="st">"-"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-correlaciones" class="quarto-figure quarto-figure-center quarto-float anchored" data-cap-location="top">
-<figure class="quarto-float quarto-float-fig figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-correlaciones-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-correlaciones-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Matriz de correlaciones
-</figcaption><div aria-describedby="fig-correlaciones-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+<div aria-describedby="fig-correlaciones-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="documento_ejemplo_files/figure-html/fig-correlaciones-1.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 </figure>
 </div>
 </div>
 </div>
-</section></section><section id="multivariados" class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="multivariados">
-<span class="header-section-number">4.2</span> Multivariados</h2>
-<section id="análisis-factorial-confirmatorio" class="level3" data-number="4.2.1"><h3 data-number="4.2.1" class="anchored" data-anchor-id="análisis-factorial-confirmatorio">
-<span class="header-section-number">4.2.1</span> Análisis Factorial Confirmatorio</h3>
+</section>
+</section>
+<section id="multivariados" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="multivariados"><span class="header-section-number">4.2</span> Multivariados</h2>
+<section id="análisis-factorial-confirmatorio" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="análisis-factorial-confirmatorio"><span class="header-section-number">4.2.1</span> Análisis Factorial Confirmatorio</h3>
 <p>En primer lugar, realizamos un test de Mardia para evaluar normalidad multivariante de los items.</p>
 <div class="cell fig-cap-location-top">
-<div class="sourceCode" id="cb7" data-cap-location="top"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">mardia</span><span class="op">(</span><span class="va">db_proc</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"perc_effort"</span>, <span class="st">"perc_talent"</span>, <span class="st">"perc_rich_parents"</span>, <span class="st">"perc_contact"</span>, <span class="st">"pref_effort"</span>, <span class="st">"pref_talent"</span>, <span class="st">"pref_rich_parents"</span>, <span class="st">"pref_contact"</span><span class="op">)</span><span class="op">]</span>, </span>
-<span>       na.rm <span class="op">=</span> <span class="cn">T</span>, plot<span class="op">=</span><span class="cn">T</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7" data-cap-location="top"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mardia</span>(db_proc[,<span class="fu">c</span>(<span class="st">"perc_effort"</span>, <span class="st">"perc_talent"</span>, <span class="st">"perc_rich_parents"</span>, <span class="st">"perc_contact"</span>, <span class="st">"pref_effort"</span>, <span class="st">"pref_talent"</span>, <span class="st">"pref_rich_parents"</span>, <span class="st">"pref_contact"</span>)], </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">na.rm =</span> T, <span class="at">plot=</span>T) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Call: mardia(x = db_proc[, c(“perc_effort”, “perc_talent”, “perc_rich_parents”, “perc_contact”, “pref_effort”, “pref_talent”, “pref_rich_parents”, “pref_contact”)], na.rm = T, plot = T)</p>
 <p>Mardia tests of multivariate skew and kurtosis Use describe(x) the to get univariate tests n.obs = 839 num.vars = 8 b1p = 4.47 skew = 624.62 with probability &lt;= 0.0000000000000000000000000000000000000000000000000000000000000000000031 small sample skew = 627.35 with probability &lt;= 0.000000000000000000000000000000000000000000000000000000000000000000001 b2p = 95.43 kurtosis = 17.67 with probability &lt;= 0<img src="documento_ejemplo_files/figure-html/fig-mardia-1.png" id="fig-mardia" class="img-fluid" style="width:70.0%" alt="Test de mardia para items escala meritocracia"></p>
 </div>
 <p>Ahora, especificamos la estructura factorial de los ítems y, a continuación, ajustamos los modelos utilizando un estimador DWLS.</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># model</span></span>
-<span><span class="va">model_cfa</span> <span class="op">&lt;-</span> <span class="st">'</span></span>
-<span><span class="st">  perc_merit = ~ perc_effort + perc_talent</span></span>
-<span><span class="st">  perc_nmerit = ~ perc_rich_parents + perc_contact</span></span>
-<span><span class="st">  pref_merit = ~ pref_effort + pref_talent</span></span>
-<span><span class="st">  pref_nmerit = ~ pref_rich_parents + pref_contact</span></span>
-<span><span class="st">  '</span></span>
-<span></span>
-<span><span class="co"># estimation </span></span>
-<span><span class="va">m1_cfa</span> <span class="op">&lt;-</span> <span class="fu">cfa</span><span class="op">(</span>model <span class="op">=</span> <span class="va">model_cfa</span>, </span>
-<span>              data <span class="op">=</span> <span class="va">db_proc</span>,</span>
-<span>              estimator <span class="op">=</span> <span class="st">"DWLS"</span>,</span>
-<span>              ordered <span class="op">=</span> <span class="cn">T</span>,</span>
-<span>              std.lv <span class="op">=</span> <span class="cn">F</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># model</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>model_cfa <span class="ot">&lt;-</span> <span class="st">'</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="st">  perc_merit = ~ perc_effort + perc_talent</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="st">  perc_nmerit = ~ perc_rich_parents + perc_contact</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="st">  pref_merit = ~ pref_effort + pref_talent</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="st">  pref_nmerit = ~ pref_rich_parents + pref_contact</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="st">  '</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># estimation </span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>m1_cfa <span class="ot">&lt;-</span> <span class="fu">cfa</span>(<span class="at">model =</span> model_cfa, </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> db_proc,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>              <span class="at">estimator =</span> <span class="st">"DWLS"</span>,</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>              <span class="at">ordered =</span> T,</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>              <span class="at">std.lv =</span> F) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Las cargas factoriales y los indicadores de la bondad del ajuste se presentan en las tablas <a href="#tbl-cargas" class="quarto-xref">Table&nbsp;2</a> y <a href="#tbl-fit" class="quarto-xref">Table&nbsp;3</a>, respectivamente.</p>
 <div class="cell" data-tbl-cap-location="top">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sum_loadings</span> <span class="op">&lt;-</span> <span class="fu">standardizedSolution</span><span class="op">(</span><span class="va">m1_cfa</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">op</span> <span class="op">==</span> <span class="st">"=~"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">lhs</span>, <span class="va">rhs</span>, <span class="va">est.std</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">rename</span><span class="op">(</span></span>
-<span>      Factor   <span class="op">=</span> <span class="va">lhs</span>,</span>
-<span>      Indicator <span class="op">=</span> <span class="va">rhs</span>,</span>
-<span>      Loading  <span class="op">=</span> <span class="va">est.std</span></span>
-<span>    <span class="op">)</span></span>
-<span></span>
-<span><span class="va">sum_loadings</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">kableExtra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span></span>
-<span>      format    <span class="op">=</span> <span class="st">"markdown"</span>,</span>
-<span>      digits    <span class="op">=</span> <span class="fl">3</span>,</span>
-<span>      booktabs  <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>      col.names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Factor"</span>, <span class="st">"Indicator"</span>, <span class="st">"Loading"</span><span class="op">)</span>,</span>
-<span>      caption   <span class="op">=</span> <span class="cn">NULL</span></span>
-<span>    <span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">kableExtra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/kable_styling.html">kable_styling</a></span><span class="op">(</span></span>
-<span>      full_width        <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>      font_size         <span class="op">=</span> <span class="fl">11</span>,</span>
-<span>      latex_options     <span class="op">=</span> <span class="st">"HOLD_position"</span>,</span>
-<span>      bootstrap_options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"striped"</span>, <span class="st">"bordered"</span><span class="op">)</span></span>
-<span>    <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sum_loadings <span class="ot">&lt;-</span> <span class="fu">standardizedSolution</span>(m1_cfa) <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(op <span class="sc">==</span> <span class="st">"=~"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(lhs, rhs, est.std) <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">Factor   =</span> lhs,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">Indicator =</span> rhs,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">Loading  =</span> est.std</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>sum_loadings <span class="sc">%&gt;%</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    kableExtra<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">format    =</span> <span class="st">"markdown"</span>,</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">digits    =</span> <span class="dv">3</span>,</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">booktabs  =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Factor"</span>, <span class="st">"Indicator"</span>, <span class="st">"Loading"</span>),</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption   =</span> <span class="cn">NULL</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">full_width        =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">font_size         =</span> <span class="dv">11</span>,</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">latex_options     =</span> <span class="st">"HOLD_position"</span>,</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"bordered"</span>)</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-cargas" class="cell quarto-float anchored" data-tbl-cap-location="top">
-<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cargas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cargas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2: Cargas factoriales
-</figcaption><div aria-describedby="tbl-cargas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+<div aria-describedby="tbl-cargas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <table class="do-not-create-environment cell table table-sm table-striped small">
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th style="text-align: left;">Factor</th>
 <th style="text-align: left;">Indicator</th>
 <th style="text-align: right;">Loading</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">perc_merit</td>
@@ -585,43 +617,45 @@ Table&nbsp;2: Cargas factoriales
 </div>
 </div>
 <div class="cell" data-tbl-cap-location="top">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">colnames_fit</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"$N$"</span>,<span class="st">"Estimator"</span>,<span class="st">"$\\chi^2$ (df)"</span>,<span class="st">"CFI"</span>,<span class="st">"TLI"</span>,<span class="st">"RMSEA 90% CI [Lower-Upper]"</span><span class="op">)</span></span>
-<span> </span>
-<span><span class="va">sum_fit</span> <span class="op">&lt;-</span> <span class="fu">fitmeasures</span><span class="op">(</span><span class="va">m1_cfa</span>, output <span class="op">=</span> <span class="st">"matrix"</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"chisq"</span>,<span class="st">"pvalue"</span>,<span class="st">"df"</span>,<span class="st">"cfi"</span>,<span class="st">"tli"</span>,</span>
-<span>                                                     <span class="st">"rmsea"</span>,<span class="st">"rmsea.ci.lower"</span>,<span class="st">"rmsea.ci.upper"</span><span class="op">)</span>,<span class="op">]</span></span>
-<span><span class="va">sum_fit</span><span class="op">$</span><span class="va">nobs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/nobs.html">nobs</a></span><span class="op">(</span><span class="va">m1_cfa</span><span class="op">)</span></span>
-<span><span class="va">sum_fit</span><span class="op">$</span><span class="va">est</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">m1_cfa</span><span class="op">)</span><span class="op">$</span><span class="va">optim</span><span class="op">$</span><span class="va">estimator</span></span>
-<span><span class="va">sum_fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">sum_fit</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>      <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
-<span>        <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">across</a></span><span class="op">(</span></span>
-<span>          .cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">cfi</span>, <span class="va">tli</span>, <span class="va">rmsea</span>, <span class="va">rmsea.ci.lower</span>, <span class="va">rmsea.ci.upper</span><span class="op">)</span>,</span>
-<span>          .fns  <span class="op">=</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">.</span>, <span class="fl">3</span><span class="op">)</span></span>
-<span>        <span class="op">)</span>,</span>
-<span>        stars   <span class="op">=</span> <span class="fu">gtools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/gtools/man/stars.pval.html">stars.pval</a></span><span class="op">(</span><span class="va">pvalue</span><span class="op">)</span>,</span>
-<span>        chisq   <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">chisq</span>,<span class="fl">3</span><span class="op">)</span>, <span class="st">" ("</span>, <span class="va">df</span>, <span class="st">") "</span>, <span class="va">stars</span><span class="op">)</span>,</span>
-<span>        rmsea.ci<span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">rmsea</span>, <span class="st">" ["</span>, <span class="va">rmsea.ci.lower</span>, <span class="st">"-"</span>, <span class="va">rmsea.ci.upper</span>, <span class="st">"]"</span><span class="op">)</span></span>
-<span>      <span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>      <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">nobs</span>, <span class="va">est</span>, <span class="va">chisq</span>, <span class="va">cfi</span>, <span class="va">tli</span>, <span class="va">rmsea.ci</span><span class="op">)</span></span>
-<span></span>
-<span></span>
-<span><span class="va">sum_fit</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">kableExtra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span></span>
-<span>      format     <span class="op">=</span> <span class="st">"markdown"</span>, </span>
-<span>      digits     <span class="op">=</span> <span class="fl">3</span>,</span>
-<span>      booktabs   <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>      col.names  <span class="op">=</span> <span class="va">colnames_fit</span>,</span>
-<span>      caption    <span class="op">=</span> <span class="cn">NULL</span></span>
-<span>    <span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">kableExtra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/kable_styling.html">kable_styling</a></span><span class="op">(</span></span>
-<span>      full_width        <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>      font_size         <span class="op">=</span> <span class="fl">11</span>,</span>
-<span>      latex_options     <span class="op">=</span> <span class="st">"HOLD_position"</span>,</span>
-<span>      bootstrap_options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"striped"</span>, <span class="st">"bordered"</span><span class="op">)</span></span>
-<span>    <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>colnames_fit  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"$N$"</span>,<span class="st">"Estimator"</span>,<span class="st">"$</span><span class="sc">\\</span><span class="st">chi^2$ (df)"</span>,<span class="st">"CFI"</span>,<span class="st">"TLI"</span>,<span class="st">"RMSEA 90% CI [Lower-Upper]"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>sum_fit <span class="ot">&lt;-</span> <span class="fu">fitmeasures</span>(m1_cfa, <span class="at">output =</span> <span class="st">"matrix"</span>)[<span class="fu">c</span>(<span class="st">"chisq"</span>,<span class="st">"pvalue"</span>,<span class="st">"df"</span>,<span class="st">"cfi"</span>,<span class="st">"tli"</span>,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                                                     <span class="st">"rmsea"</span>,<span class="st">"rmsea.ci.lower"</span>,<span class="st">"rmsea.ci.upper"</span>),]</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>sum_fit<span class="sc">$</span>nobs <span class="ot">&lt;-</span> <span class="fu">nobs</span>(m1_cfa)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>sum_fit<span class="sc">$</span>est  <span class="ot">&lt;-</span> <span class="fu">summary</span>(m1_cfa)<span class="sc">$</span>optim<span class="sc">$</span>estimator</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>sum_fit <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(sum_fit) <span class="sc">%&gt;%</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>      dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">across</span>(</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">.cols =</span> <span class="fu">c</span>(cfi, tli, rmsea, rmsea.ci.lower, rmsea.ci.upper),</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">.fns  =</span> <span class="sc">~</span> <span class="fu">round</span>(., <span class="dv">3</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">stars   =</span> gtools<span class="sc">::</span><span class="fu">stars.pval</span>(pvalue),</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">chisq   =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(chisq,<span class="dv">3</span>), <span class="st">" ("</span>, df, <span class="st">") "</span>, stars),</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">rmsea.ci=</span> <span class="fu">paste0</span>(rmsea, <span class="st">" ["</span>, rmsea.ci.lower, <span class="st">"-"</span>, rmsea.ci.upper, <span class="st">"]"</span>)</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>      dplyr<span class="sc">::</span><span class="fu">select</span>(nobs, est, chisq, cfi, tli, rmsea.ci)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>sum_fit <span class="sc">%&gt;%</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>    kableExtra<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">format     =</span> <span class="st">"markdown"</span>, </span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">digits     =</span> <span class="dv">3</span>,</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">booktabs   =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names  =</span> colnames_fit,</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption    =</span> <span class="cn">NULL</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>    kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">full_width        =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">font_size         =</span> <span class="dv">11</span>,</span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">latex_options     =</span> <span class="st">"HOLD_position"</span>,</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>      <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"bordered"</span>)</span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-fit" class="cell quarto-float anchored" data-tbl-cap-location="top">
-<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-fit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-fit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;3: Indicadores de bondad de ajuste
-</figcaption><div aria-describedby="tbl-fit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+<div aria-describedby="tbl-fit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
@@ -632,23 +666,26 @@ Table&nbsp;3: Indicadores de bondad de ajuste
 <col style="width: 8%">
 <col style="width: 39%">
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th style="text-align: right;"><span class="math inline">\(N\)</span></th>
 <th style="text-align: left;">Estimator</th>
-<th style="text-align: left;">
-<span class="math inline">\(\chi^2\)</span> (df)</th>
+<th style="text-align: left;"><span class="math inline">\(\chi^2\)</span> (df)</th>
 <th style="text-align: right;">CFI</th>
 <th style="text-align: right;">TLI</th>
 <th style="text-align: left;">RMSEA 90% CI [Lower-Upper]</th>
-</tr></thead>
-<tbody><tr class="odd">
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
 <td style="text-align: right;">839</td>
 <td style="text-align: left;">DWLS</td>
 <td style="text-align: left;">39.183 (14) ***</td>
 <td style="text-align: right;">0.989</td>
 <td style="text-align: right;">0.979</td>
 <td style="text-align: left;">0.046 [0.03-0.064]</td>
-</tr></tbody>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
@@ -656,8 +693,11 @@ Table&nbsp;3: Indicadores de bondad de ajuste
 </div>
 </div>
 <p>Siguiendo los criterios propuestos por Brown <span class="citation" data-cites="brown_confirmatory_2015">(<a href="#ref-brown_confirmatory_2015" role="doc-biblioref">2015</a>)</span>, el modelo presenta un buen ajuste.</p>
-</section></section></section><section id="referencias" class="level1" data-number="5"><h1 data-number="5">
-<span class="header-section-number">5</span> Referencias</h1>
+</section>
+</section>
+</section>
+<section id="referencias" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Referencias</h1>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-brown_confirmatory_2015" class="csl-entry" role="listitem">
 Brown, T. A. (2015). <em>Confirmatory factor analysis for applied research</em> (Second edition). New York London: The Guilford Press.
@@ -669,7 +709,13 @@ Castillo, J. C., Iturra, J., Maldonado, L., Atria, J., &amp; Meneses, F. (2023).
 Kline, R. B. (2023). <em>Principles and <span>Practice</span> of <span>Structural Equation Modeling</span></em>. Guilford Publications.
 </div>
 </div>
-</section></main><!-- /main column --><script id="quarto-html-after-body" type="application/javascript">
+<!-- -->
+
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -748,6 +794,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1077,8 +1174,385 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb11" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Análisis de datos"</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Taller Introducción a Quarto y Github"</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Equipo EDUMER"</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> en</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="an">fontsize:</span><span class="co"> 12pt</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-copy: true</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-location: right</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 4</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-expand: 2</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-title: Contents</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="co">    number-depth: 4</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="co">    theme:</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="co">      - cosmo</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="co">    title-block-banner: true</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf:</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="co">    number-depth: 3</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> "../input/bib/merit-factorial.bib"</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> "../input/bib/apa6.csl"</span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="an">link-citations:</span><span class="co"> true</span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a><span class="fu"># Presentación</span></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>Este documento de ejemplo presenta el código empleado para un análisis de datos en el marco del taller de Introducción a Quarto y Github por parte del equipo del <span class="co">[</span><span class="ot">Proyecto Fondecyt EDUMER</span><span class="co">](https://github.com/educacion-meritocracia)</span>. El objetivo del análisis es evaluar un modelo de medición sobre percepciones y preferencias sobre meritocracia. El conjunto de datos utilizado, <span class="in">`db_long_proc.RData`</span>, proviene de una fuente que fue procesada previamente.</span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: set</span></span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>, <span class="at">include =</span> <span class="cn">TRUE</span>, <span class="at">warning =</span> <span class="cn">FALSE</span>, <span class="at">message =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a>table_format <span class="ot">&lt;-</span> <span class="cf">if</span>(<span class="fu">is_html_output</span>()) {</span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a>  <span class="st">"html"</span></span>
+<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span>(<span class="fu">is_latex_output</span>()) {</span>
+<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a>  <span class="st">"latex"</span></span>
+<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a>table_format2 <span class="ot">&lt;-</span> <span class="cf">if</span>(<span class="fu">is_html_output</span>()) {</span>
+<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a>  T</span>
+<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span>(<span class="fu">is_latex_output</span>()) {</span>
+<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a>  F</span>
+<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">kableExtra.html.bsTable =</span> T)</span>
+<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">knitr.kable.NA =</span> <span class="st">""</span>)</span>
+<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a><span class="fu"># Librerías</span></span>
+<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a>En primer lugar, cargamos las librerías necesarias. En este caso, utilizamos <span class="in">`pacman::p_load`</span> para cargar y llamar a las librerías en un solo movimiento. </span>
+<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-69"><a href="#cb11-69" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-70"><a href="#cb11-70" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: libraries</span></span>
+<span id="cb11-71"><a href="#cb11-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-72"><a href="#cb11-72" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span> <span class="fu">require</span>(<span class="st">"pacman"</span>)) <span class="fu">install.packages</span>(<span class="st">"pacman"</span>)</span>
+<span id="cb11-73"><a href="#cb11-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-74"><a href="#cb11-74" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse,</span>
+<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a>               sjmisc, </span>
+<span id="cb11-76"><a href="#cb11-76" aria-hidden="true" tabindex="-1"></a>               lavaan,</span>
+<span id="cb11-77"><a href="#cb11-77" aria-hidden="true" tabindex="-1"></a>               psych,</span>
+<span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a>               corrplot,</span>
+<span id="cb11-79"><a href="#cb11-79" aria-hidden="true" tabindex="-1"></a>               ggdist,</span>
+<span id="cb11-80"><a href="#cb11-80" aria-hidden="true" tabindex="-1"></a>               patchwork,</span>
+<span id="cb11-81"><a href="#cb11-81" aria-hidden="true" tabindex="-1"></a>               sjlabelled,</span>
+<span id="cb11-82"><a href="#cb11-82" aria-hidden="true" tabindex="-1"></a>               semTools,</span>
+<span id="cb11-83"><a href="#cb11-83" aria-hidden="true" tabindex="-1"></a>               gtools,</span>
+<span id="cb11-84"><a href="#cb11-84" aria-hidden="true" tabindex="-1"></a>               RColorBrewer,</span>
+<span id="cb11-85"><a href="#cb11-85" aria-hidden="true" tabindex="-1"></a>               skimr)</span>
+<span id="cb11-86"><a href="#cb11-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-87"><a href="#cb11-87" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>)</span>
+<span id="cb11-88"><a href="#cb11-88" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb11-89"><a href="#cb11-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-90"><a href="#cb11-90" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-91"><a href="#cb11-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-92"><a href="#cb11-92" aria-hidden="true" tabindex="-1"></a><span class="fu"># Datos</span></span>
+<span id="cb11-93"><a href="#cb11-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-94"><a href="#cb11-94" aria-hidden="true" tabindex="-1"></a>Segundo, cargamos nuestra base de datos previamente procesada llamada <span class="in">`db_proc.RData`</span> que se encuentra alojada en la ruta: **output &gt; data**.</span>
+<span id="cb11-95"><a href="#cb11-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-98"><a href="#cb11-98" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-99"><a href="#cb11-99" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: data</span></span>
+<span id="cb11-100"><a href="#cb11-100" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb11-101"><a href="#cb11-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-102"><a href="#cb11-102" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">"../output/data/db_proc.RData"</span>)</span>
+<span id="cb11-103"><a href="#cb11-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-104"><a href="#cb11-104" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(db_proc)</span>
+<span id="cb11-105"><a href="#cb11-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-106"><a href="#cb11-106" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-107"><a href="#cb11-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-108"><a href="#cb11-108" aria-hidden="true" tabindex="-1"></a>Contamos con <span class="in">`r dim(db_proc)[1]`</span> casos o filas y con <span class="in">`r dim(db_proc)[2]`</span> variables o columnas.</span>
+<span id="cb11-109"><a href="#cb11-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-110"><a href="#cb11-110" aria-hidden="true" tabindex="-1"></a><span class="fu"># Análisis</span></span>
+<span id="cb11-111"><a href="#cb11-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-112"><a href="#cb11-112" aria-hidden="true" tabindex="-1"></a>En esta sección se muestran los análisis estadísticos. Primero, se realizan análisis descriptivos uni y bivariados. Luego, se hace un análisis factorial confirmatorio (CFA) <span class="co">[</span><span class="ot">@brown_confirmatory_2015</span><span class="co">]</span> para ajustar un modelo de medición sobre percepciones y preferencias sobre meritocracia y no meritocracia propuesto por Castillo et al. <span class="co">[</span><span class="ot">-@castillo_multidimensional_2023</span><span class="co">]</span>. </span>
+<span id="cb11-113"><a href="#cb11-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-114"><a href="#cb11-114" aria-hidden="true" tabindex="-1"></a>Los siguientes criterios de ajuste, tomados de Brown <span class="co">[</span><span class="ot">-@brown_confirmatory_2015</span><span class="co">]</span> y Kline <span class="co">[</span><span class="ot">-@kline_principles_2023</span><span class="co">]</span>, orientan la evaluación de la adecuación del modelo:</span>
+<span id="cb11-115"><a href="#cb11-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-116"><a href="#cb11-116" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Chi-square: $p$&gt;0.05</span>
+<span id="cb11-117"><a href="#cb11-117" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Chi-square ratio $(\chi^2/df)$: &lt; 3</span>
+<span id="cb11-118"><a href="#cb11-118" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Comparative Fit Index (CFI): &gt; 0.95</span>
+<span id="cb11-119"><a href="#cb11-119" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tucker–Lewis Index (TLI): &gt; 0.95</span>
+<span id="cb11-120"><a href="#cb11-120" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Root Mean Square Error of Approximation (RMSEA): &lt; 0.06</span>
+<span id="cb11-121"><a href="#cb11-121" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Standardized Root Mean Square Residual (SRMR): &lt; 0.08 </span>
+<span id="cb11-122"><a href="#cb11-122" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Akaike Information Criterion (AIC): no fixed cutoff; lower values indicate better fit.</span>
+<span id="cb11-123"><a href="#cb11-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-124"><a href="#cb11-124" aria-hidden="true" tabindex="-1"></a><span class="fu">## Descriptivos</span></span>
+<span id="cb11-125"><a href="#cb11-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-126"><a href="#cb11-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-127"><a href="#cb11-127" aria-hidden="true" tabindex="-1"></a><span class="fu">### Univariados</span></span>
+<span id="cb11-128"><a href="#cb11-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-129"><a href="#cb11-129" aria-hidden="true" tabindex="-1"></a>Los estadísticos descriptivos para las variables de interés se muestran en la @tbl-summary. </span>
+<span id="cb11-130"><a href="#cb11-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-133"><a href="#cb11-133" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-134"><a href="#cb11-134" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-summary</span></span>
+<span id="cb11-135"><a href="#cb11-135" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Estadísticos descriptivos"</span></span>
+<span id="cb11-136"><a href="#cb11-136" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap-location: top</span></span>
+<span id="cb11-137"><a href="#cb11-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-138"><a href="#cb11-138" aria-hidden="true" tabindex="-1"></a>t1 <span class="ot">&lt;-</span> db_proc <span class="sc">%&gt;%</span> </span>
+<span id="cb11-139"><a href="#cb11-139" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-140"><a href="#cb11-140" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb11-141"><a href="#cb11-141" aria-hidden="true" tabindex="-1"></a>  <span class="fu">yank</span>(<span class="st">"numeric"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-142"><a href="#cb11-142" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb11-143"><a href="#cb11-143" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">range =</span> <span class="fu">paste0</span>(<span class="st">"("</span>,p0,<span class="st">"-"</span>,p100,<span class="st">")"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-144"><a href="#cb11-144" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_if</span>(<span class="at">.predicate =</span> is.numeric, <span class="at">.funs =</span> <span class="sc">~</span> <span class="fu">round</span>(.,<span class="dv">2</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-145"><a href="#cb11-145" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="st">"Variable"</span> <span class="ot">=</span> skim_variable,<span class="st">"Mean"</span><span class="ot">=</span> mean, <span class="st">"SD"</span><span class="ot">=</span>sd, <span class="st">"Range"</span> <span class="ot">=</span> range, <span class="st">"Histogram"</span><span class="ot">=</span>hist) </span>
+<span id="cb11-146"><a href="#cb11-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-147"><a href="#cb11-147" aria-hidden="true" tabindex="-1"></a>t1 <span class="sc">%&gt;%</span> </span>
+<span id="cb11-148"><a href="#cb11-148" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="at">format =</span> <span class="st">"markdown"</span>)</span>
+<span id="cb11-149"><a href="#cb11-149" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-150"><a href="#cb11-150" aria-hidden="true" tabindex="-1"></a>En la @fig-likert se muestra la distribución de las respuestas para los items de percepciones y preferencias meritocráticas y no meritocráticas.</span>
+<span id="cb11-151"><a href="#cb11-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-154"><a href="#cb11-154" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-155"><a href="#cb11-155" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-likert</span></span>
+<span id="cb11-156"><a href="#cb11-156" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap-location: top</span></span>
+<span id="cb11-157"><a href="#cb11-157" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Distribución de respuestas en items sobre percepciones y preferencias por meritocracia"</span></span>
+<span id="cb11-158"><a href="#cb11-158" aria-hidden="true" tabindex="-1"></a><span class="co">#| out-width: '80%'</span></span>
+<span id="cb11-159"><a href="#cb11-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-160"><a href="#cb11-160" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_ggdist</span>())</span>
+<span id="cb11-161"><a href="#cb11-161" aria-hidden="true" tabindex="-1"></a>colors <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">n =</span> <span class="dv">4</span>, <span class="at">name =</span> <span class="st">"RdBu"</span>)</span>
+<span id="cb11-162"><a href="#cb11-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-163"><a href="#cb11-163" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> db_proc <span class="sc">%&gt;%</span></span>
+<span id="cb11-164"><a href="#cb11-164" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"perc"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-165"><a href="#cb11-165" aria-hidden="true" tabindex="-1"></a>  sjPlot<span class="sc">::</span><span class="fu">plot_likert</span>(<span class="at">geom.colors =</span> colors,</span>
+<span id="cb11-166"><a href="#cb11-166" aria-hidden="true" tabindex="-1"></a>                      <span class="at">title =</span> <span class="fu">c</span>(<span class="st">"a. Percepciones"</span>),</span>
+<span id="cb11-167"><a href="#cb11-167" aria-hidden="true" tabindex="-1"></a>                      <span class="at">geom.size =</span> <span class="fl">0.8</span>,</span>
+<span id="cb11-168"><a href="#cb11-168" aria-hidden="true" tabindex="-1"></a>                      <span class="at">axis.labels =</span> <span class="fu">c</span>(<span class="st">"Esfuerzo"</span>, <span class="st">"Talento"</span>, <span class="st">"Padres ricos"</span>, <span class="st">"Contactos"</span>),</span>
+<span id="cb11-169"><a href="#cb11-169" aria-hidden="true" tabindex="-1"></a>                      <span class="at">catcount =</span> <span class="dv">4</span>,</span>
+<span id="cb11-170"><a href="#cb11-170" aria-hidden="true" tabindex="-1"></a>                      <span class="at">values  =</span>  <span class="st">"sum.outside"</span>,</span>
+<span id="cb11-171"><a href="#cb11-171" aria-hidden="true" tabindex="-1"></a>                      <span class="at">reverse.colors =</span> F,</span>
+<span id="cb11-172"><a href="#cb11-172" aria-hidden="true" tabindex="-1"></a>                      <span class="at">reverse.scale =</span> T,</span>
+<span id="cb11-173"><a href="#cb11-173" aria-hidden="true" tabindex="-1"></a>                      <span class="at">show.n =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb11-174"><a href="#cb11-174" aria-hidden="true" tabindex="-1"></a>                      <span class="at">show.prc.sign =</span> T</span>
+<span id="cb11-175"><a href="#cb11-175" aria-hidden="true" tabindex="-1"></a>                      ) <span class="sc">+</span></span>
+<span id="cb11-176"><a href="#cb11-176" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb11-177"><a href="#cb11-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-178"><a href="#cb11-178" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> db_proc <span class="sc">%&gt;%</span> </span>
+<span id="cb11-179"><a href="#cb11-179" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"pref"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-180"><a href="#cb11-180" aria-hidden="true" tabindex="-1"></a>  sjPlot<span class="sc">::</span><span class="fu">plot_likert</span>(<span class="at">geom.colors =</span> colors,</span>
+<span id="cb11-181"><a href="#cb11-181" aria-hidden="true" tabindex="-1"></a>                      <span class="at">title =</span> <span class="fu">c</span>(<span class="st">"b. Preferencias"</span>),</span>
+<span id="cb11-182"><a href="#cb11-182" aria-hidden="true" tabindex="-1"></a>                      <span class="at">geom.size =</span> <span class="fl">0.8</span>,</span>
+<span id="cb11-183"><a href="#cb11-183" aria-hidden="true" tabindex="-1"></a>                     <span class="at">axis.labels =</span> <span class="fu">c</span>(<span class="st">"Esfuerzo"</span>, <span class="st">"Talento"</span>, <span class="st">"Padres ricos"</span>, <span class="st">"Contactos"</span>),</span>
+<span id="cb11-184"><a href="#cb11-184" aria-hidden="true" tabindex="-1"></a>                      <span class="at">catcount =</span> <span class="dv">4</span>,</span>
+<span id="cb11-185"><a href="#cb11-185" aria-hidden="true" tabindex="-1"></a>                      <span class="at">values  =</span>  <span class="st">"sum.outside"</span>,</span>
+<span id="cb11-186"><a href="#cb11-186" aria-hidden="true" tabindex="-1"></a>                      <span class="at">reverse.colors =</span> F,</span>
+<span id="cb11-187"><a href="#cb11-187" aria-hidden="true" tabindex="-1"></a>                      <span class="at">reverse.scale =</span> T,</span>
+<span id="cb11-188"><a href="#cb11-188" aria-hidden="true" tabindex="-1"></a>                      <span class="at">show.n =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb11-189"><a href="#cb11-189" aria-hidden="true" tabindex="-1"></a>                      <span class="at">show.prc.sign =</span> T</span>
+<span id="cb11-190"><a href="#cb11-190" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-191"><a href="#cb11-191" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb11-192"><a href="#cb11-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-193"><a href="#cb11-193" aria-hidden="true" tabindex="-1"></a>likerplot <span class="ot">&lt;-</span> a <span class="sc">/</span> b <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">caption =</span> <span class="fu">paste0</span>(<span class="st">"Fuente: Elaboración propia en base a Encuesta Panel EDUMER Ola 1"</span>,<span class="st">" (n = "</span>,<span class="fu">dim</span>(db_proc)[<span class="dv">1</span>],<span class="st">")"</span></span>
+<span id="cb11-194"><a href="#cb11-194" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb11-195"><a href="#cb11-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-196"><a href="#cb11-196" aria-hidden="true" tabindex="-1"></a>likerplot</span>
+<span id="cb11-197"><a href="#cb11-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-198"><a href="#cb11-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-199"><a href="#cb11-199" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-200"><a href="#cb11-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-201"><a href="#cb11-201" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bivariados</span></span>
+<span id="cb11-202"><a href="#cb11-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-203"><a href="#cb11-203" aria-hidden="true" tabindex="-1"></a>Respecto a la asociación entre variables, en la @fig-correlaciones se muestra la matriz de correlaciones para las variables de interés. </span>
+<span id="cb11-204"><a href="#cb11-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-207"><a href="#cb11-207" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-208"><a href="#cb11-208" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-correlaciones</span></span>
+<span id="cb11-209"><a href="#cb11-209" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Matriz de correlaciones"</span></span>
+<span id="cb11-210"><a href="#cb11-210" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap-location: top</span></span>
+<span id="cb11-211"><a href="#cb11-211" aria-hidden="true" tabindex="-1"></a><span class="co">#| out-width: '80%'</span></span>
+<span id="cb11-212"><a href="#cb11-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-213"><a href="#cb11-213" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">polychoric</span>(db_proc[,<span class="fu">c</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">11</span>,<span class="dv">15</span>)])</span>
+<span id="cb11-214"><a href="#cb11-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-215"><a href="#cb11-215" aria-hidden="true" tabindex="-1"></a>P <span class="ot">&lt;-</span> <span class="fu">cor</span>(db_proc[,<span class="fu">c</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">11</span>,<span class="dv">15</span>)], <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
+<span id="cb11-216"><a href="#cb11-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-217"><a href="#cb11-217" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(M<span class="sc">$</span>rho) <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb11-218"><a href="#cb11-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-219"><a href="#cb11-219" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(P) <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb11-220"><a href="#cb11-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-221"><a href="#cb11-221" aria-hidden="true" tabindex="-1"></a>M<span class="sc">$</span>rho[<span class="dv">9</span>,] <span class="ot">&lt;-</span> P[<span class="dv">9</span>,]</span>
+<span id="cb11-222"><a href="#cb11-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-223"><a href="#cb11-223" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(M<span class="sc">$</span>rho) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A. Percepción Esfuerzo"</span>,</span>
+<span id="cb11-224"><a href="#cb11-224" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"B. Percepción Talento"</span>,</span>
+<span id="cb11-225"><a href="#cb11-225" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"C. Percepción Padres Ricos"</span>,</span>
+<span id="cb11-226"><a href="#cb11-226" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"D. Percepción Contactos"</span>,</span>
+<span id="cb11-227"><a href="#cb11-227" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"E. Preferencias Esfuerzo"</span>,</span>
+<span id="cb11-228"><a href="#cb11-228" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"F. Preferencias Talento"</span>,</span>
+<span id="cb11-229"><a href="#cb11-229" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"G. Preferencias Padres Ricos"</span>,</span>
+<span id="cb11-230"><a href="#cb11-230" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"H. Preferencias Contactos"</span>,</span>
+<span id="cb11-231"><a href="#cb11-231" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"I. Market Justice Preferences"</span>)</span>
+<span id="cb11-232"><a href="#cb11-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-233"><a href="#cb11-233" aria-hidden="true" tabindex="-1"></a><span class="co">#set Column names of the matrix</span></span>
+<span id="cb11-234"><a href="#cb11-234" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(M<span class="sc">$</span>rho) <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"(A)"</span>, <span class="st">"(B)"</span>,<span class="st">"(C)"</span>,<span class="st">"(D)"</span>,<span class="st">"(E)"</span>,<span class="st">"(F)"</span>,<span class="st">"(G)"</span>,</span>
+<span id="cb11-235"><a href="#cb11-235" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"(H)"</span>,<span class="st">"(I)"</span>)</span>
+<span id="cb11-236"><a href="#cb11-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-237"><a href="#cb11-237" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(P) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A. Percepción Esfuerzo"</span>,</span>
+<span id="cb11-238"><a href="#cb11-238" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"B. Percepción Talento"</span>,</span>
+<span id="cb11-239"><a href="#cb11-239" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"C. Percepción Padres Ricos"</span>,</span>
+<span id="cb11-240"><a href="#cb11-240" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"D. Percepción Contactos"</span>,</span>
+<span id="cb11-241"><a href="#cb11-241" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"E. Preferencias Esfuerzo"</span>,</span>
+<span id="cb11-242"><a href="#cb11-242" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"F. Preferencias Talento"</span>,</span>
+<span id="cb11-243"><a href="#cb11-243" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"G. Preferencias Padres Ricos"</span>,</span>
+<span id="cb11-244"><a href="#cb11-244" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"H. Preferencias Contactos"</span>,</span>
+<span id="cb11-245"><a href="#cb11-245" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"I. Market Justice Preferences"</span>)</span>
+<span id="cb11-246"><a href="#cb11-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-247"><a href="#cb11-247" aria-hidden="true" tabindex="-1"></a><span class="co">#set Column names of the matrix</span></span>
+<span id="cb11-248"><a href="#cb11-248" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(P) <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"(A)"</span>, <span class="st">"(B)"</span>,<span class="st">"(C)"</span>,<span class="st">"(D)"</span>,<span class="st">"(E)"</span>,<span class="st">"(F)"</span>,<span class="st">"(G)"</span>,</span>
+<span id="cb11-249"><a href="#cb11-249" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"(H)"</span>,<span class="st">"(I)"</span>)</span>
+<span id="cb11-250"><a href="#cb11-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-251"><a href="#cb11-251" aria-hidden="true" tabindex="-1"></a>testp <span class="ot">&lt;-</span> <span class="fu">cor.mtest</span>(M<span class="sc">$</span>rho, <span class="at">conf.level =</span> <span class="fl">0.95</span>)</span>
+<span id="cb11-252"><a href="#cb11-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-253"><a href="#cb11-253" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot the matrix using corrplot</span></span>
+<span id="cb11-254"><a href="#cb11-254" aria-hidden="true" tabindex="-1"></a>corrplot<span class="sc">::</span><span class="fu">corrplot</span>(M<span class="sc">$</span>rho,</span>
+<span id="cb11-255"><a href="#cb11-255" aria-hidden="true" tabindex="-1"></a>                   <span class="at">method =</span> <span class="st">"color"</span>,</span>
+<span id="cb11-256"><a href="#cb11-256" aria-hidden="true" tabindex="-1"></a>                   <span class="at">addCoef.col =</span> <span class="st">"black"</span>,</span>
+<span id="cb11-257"><a href="#cb11-257" aria-hidden="true" tabindex="-1"></a>                   <span class="at">type =</span> <span class="st">"upper"</span>,</span>
+<span id="cb11-258"><a href="#cb11-258" aria-hidden="true" tabindex="-1"></a>                   <span class="at">tl.col =</span> <span class="st">"black"</span>,</span>
+<span id="cb11-259"><a href="#cb11-259" aria-hidden="true" tabindex="-1"></a>                   <span class="at">col =</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">"#E16462"</span>, <span class="st">"white"</span>, <span class="st">"#0D0887"</span>))(<span class="dv">12</span>),</span>
+<span id="cb11-260"><a href="#cb11-260" aria-hidden="true" tabindex="-1"></a>                   <span class="at">bg =</span> <span class="st">"white"</span>,</span>
+<span id="cb11-261"><a href="#cb11-261" aria-hidden="true" tabindex="-1"></a>                   <span class="at">na.label =</span> <span class="st">"-"</span>) </span>
+<span id="cb11-262"><a href="#cb11-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-263"><a href="#cb11-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-264"><a href="#cb11-264" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-265"><a href="#cb11-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-266"><a href="#cb11-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-267"><a href="#cb11-267" aria-hidden="true" tabindex="-1"></a><span class="fu">## Multivariados</span></span>
+<span id="cb11-268"><a href="#cb11-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-269"><a href="#cb11-269" aria-hidden="true" tabindex="-1"></a><span class="fu">### Análisis Factorial Confirmatorio</span></span>
+<span id="cb11-270"><a href="#cb11-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-271"><a href="#cb11-271" aria-hidden="true" tabindex="-1"></a>En primer lugar, realizamos un test de Mardia para evaluar normalidad multivariante de los items.</span>
+<span id="cb11-272"><a href="#cb11-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-275"><a href="#cb11-275" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-276"><a href="#cb11-276" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-mardia</span></span>
+<span id="cb11-277"><a href="#cb11-277" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Test de mardia para items escala meritocracia"</span></span>
+<span id="cb11-278"><a href="#cb11-278" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap-location: top</span></span>
+<span id="cb11-279"><a href="#cb11-279" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-asp: 1.1</span></span>
+<span id="cb11-280"><a href="#cb11-280" aria-hidden="true" tabindex="-1"></a><span class="co">#| out-width: '70%'</span></span>
+<span id="cb11-281"><a href="#cb11-281" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: asis</span></span>
+<span id="cb11-282"><a href="#cb11-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-283"><a href="#cb11-283" aria-hidden="true" tabindex="-1"></a><span class="fu">mardia</span>(db_proc[,<span class="fu">c</span>(<span class="st">"perc_effort"</span>, <span class="st">"perc_talent"</span>, <span class="st">"perc_rich_parents"</span>, <span class="st">"perc_contact"</span>, <span class="st">"pref_effort"</span>, <span class="st">"pref_talent"</span>, <span class="st">"pref_rich_parents"</span>, <span class="st">"pref_contact"</span>)], </span>
+<span id="cb11-284"><a href="#cb11-284" aria-hidden="true" tabindex="-1"></a>       <span class="at">na.rm =</span> T, <span class="at">plot=</span>T) </span>
+<span id="cb11-285"><a href="#cb11-285" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-286"><a href="#cb11-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-287"><a href="#cb11-287" aria-hidden="true" tabindex="-1"></a>Ahora, especificamos la estructura factorial de los ítems y, a continuación, ajustamos los modelos utilizando un estimador DWLS. </span>
+<span id="cb11-288"><a href="#cb11-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-291"><a href="#cb11-291" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-292"><a href="#cb11-292" aria-hidden="true" tabindex="-1"></a><span class="co"># model</span></span>
+<span id="cb11-293"><a href="#cb11-293" aria-hidden="true" tabindex="-1"></a>model_cfa <span class="ot">&lt;-</span> <span class="st">'</span></span>
+<span id="cb11-294"><a href="#cb11-294" aria-hidden="true" tabindex="-1"></a><span class="st">  perc_merit = ~ perc_effort + perc_talent</span></span>
+<span id="cb11-295"><a href="#cb11-295" aria-hidden="true" tabindex="-1"></a><span class="st">  perc_nmerit = ~ perc_rich_parents + perc_contact</span></span>
+<span id="cb11-296"><a href="#cb11-296" aria-hidden="true" tabindex="-1"></a><span class="st">  pref_merit = ~ pref_effort + pref_talent</span></span>
+<span id="cb11-297"><a href="#cb11-297" aria-hidden="true" tabindex="-1"></a><span class="st">  pref_nmerit = ~ pref_rich_parents + pref_contact</span></span>
+<span id="cb11-298"><a href="#cb11-298" aria-hidden="true" tabindex="-1"></a><span class="st">  '</span></span>
+<span id="cb11-299"><a href="#cb11-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-300"><a href="#cb11-300" aria-hidden="true" tabindex="-1"></a><span class="co"># estimation </span></span>
+<span id="cb11-301"><a href="#cb11-301" aria-hidden="true" tabindex="-1"></a>m1_cfa <span class="ot">&lt;-</span> <span class="fu">cfa</span>(<span class="at">model =</span> model_cfa, </span>
+<span id="cb11-302"><a href="#cb11-302" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> db_proc,</span>
+<span id="cb11-303"><a href="#cb11-303" aria-hidden="true" tabindex="-1"></a>              <span class="at">estimator =</span> <span class="st">"DWLS"</span>,</span>
+<span id="cb11-304"><a href="#cb11-304" aria-hidden="true" tabindex="-1"></a>              <span class="at">ordered =</span> T,</span>
+<span id="cb11-305"><a href="#cb11-305" aria-hidden="true" tabindex="-1"></a>              <span class="at">std.lv =</span> F) </span>
+<span id="cb11-306"><a href="#cb11-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-307"><a href="#cb11-307" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-308"><a href="#cb11-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-309"><a href="#cb11-309" aria-hidden="true" tabindex="-1"></a>Las cargas factoriales y los indicadores de la bondad del ajuste se presentan en las tablas @tbl-cargas y @tbl-fit, respectivamente.</span>
+<span id="cb11-310"><a href="#cb11-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-313"><a href="#cb11-313" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-314"><a href="#cb11-314" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-cargas</span></span>
+<span id="cb11-315"><a href="#cb11-315" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Cargas factoriales"</span></span>
+<span id="cb11-316"><a href="#cb11-316" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap-location: top</span></span>
+<span id="cb11-317"><a href="#cb11-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-318"><a href="#cb11-318" aria-hidden="true" tabindex="-1"></a>sum_loadings <span class="ot">&lt;-</span> <span class="fu">standardizedSolution</span>(m1_cfa) <span class="sc">%&gt;%</span></span>
+<span id="cb11-319"><a href="#cb11-319" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(op <span class="sc">==</span> <span class="st">"=~"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-320"><a href="#cb11-320" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(lhs, rhs, est.std) <span class="sc">%&gt;%</span></span>
+<span id="cb11-321"><a href="#cb11-321" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(</span>
+<span id="cb11-322"><a href="#cb11-322" aria-hidden="true" tabindex="-1"></a>      <span class="at">Factor   =</span> lhs,</span>
+<span id="cb11-323"><a href="#cb11-323" aria-hidden="true" tabindex="-1"></a>      <span class="at">Indicator =</span> rhs,</span>
+<span id="cb11-324"><a href="#cb11-324" aria-hidden="true" tabindex="-1"></a>      <span class="at">Loading  =</span> est.std</span>
+<span id="cb11-325"><a href="#cb11-325" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb11-326"><a href="#cb11-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-327"><a href="#cb11-327" aria-hidden="true" tabindex="-1"></a>sum_loadings <span class="sc">%&gt;%</span></span>
+<span id="cb11-328"><a href="#cb11-328" aria-hidden="true" tabindex="-1"></a>    kableExtra<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb11-329"><a href="#cb11-329" aria-hidden="true" tabindex="-1"></a>      <span class="at">format    =</span> <span class="st">"markdown"</span>,</span>
+<span id="cb11-330"><a href="#cb11-330" aria-hidden="true" tabindex="-1"></a>      <span class="at">digits    =</span> <span class="dv">3</span>,</span>
+<span id="cb11-331"><a href="#cb11-331" aria-hidden="true" tabindex="-1"></a>      <span class="at">booktabs  =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb11-332"><a href="#cb11-332" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Factor"</span>, <span class="st">"Indicator"</span>, <span class="st">"Loading"</span>),</span>
+<span id="cb11-333"><a href="#cb11-333" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption   =</span> <span class="cn">NULL</span></span>
+<span id="cb11-334"><a href="#cb11-334" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb11-335"><a href="#cb11-335" aria-hidden="true" tabindex="-1"></a>    kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(</span>
+<span id="cb11-336"><a href="#cb11-336" aria-hidden="true" tabindex="-1"></a>      <span class="at">full_width        =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb11-337"><a href="#cb11-337" aria-hidden="true" tabindex="-1"></a>      <span class="at">font_size         =</span> <span class="dv">11</span>,</span>
+<span id="cb11-338"><a href="#cb11-338" aria-hidden="true" tabindex="-1"></a>      <span class="at">latex_options     =</span> <span class="st">"HOLD_position"</span>,</span>
+<span id="cb11-339"><a href="#cb11-339" aria-hidden="true" tabindex="-1"></a>      <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"bordered"</span>)</span>
+<span id="cb11-340"><a href="#cb11-340" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb11-341"><a href="#cb11-341" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb11-342"><a href="#cb11-342" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-343"><a href="#cb11-343" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-344"><a href="#cb11-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-347"><a href="#cb11-347" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-348"><a href="#cb11-348" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-fit</span></span>
+<span id="cb11-349"><a href="#cb11-349" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Indicadores de bondad de ajuste"</span></span>
+<span id="cb11-350"><a href="#cb11-350" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap-location: top</span></span>
+<span id="cb11-351"><a href="#cb11-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-352"><a href="#cb11-352" aria-hidden="true" tabindex="-1"></a>colnames_fit  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"$N$"</span>,<span class="st">"Estimator"</span>,<span class="st">"$</span><span class="sc">\\</span><span class="st">chi^2$ (df)"</span>,<span class="st">"CFI"</span>,<span class="st">"TLI"</span>,<span class="st">"RMSEA 90% CI [Lower-Upper]"</span>)</span>
+<span id="cb11-353"><a href="#cb11-353" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb11-354"><a href="#cb11-354" aria-hidden="true" tabindex="-1"></a>sum_fit <span class="ot">&lt;-</span> <span class="fu">fitmeasures</span>(m1_cfa, <span class="at">output =</span> <span class="st">"matrix"</span>)[<span class="fu">c</span>(<span class="st">"chisq"</span>,<span class="st">"pvalue"</span>,<span class="st">"df"</span>,<span class="st">"cfi"</span>,<span class="st">"tli"</span>,</span>
+<span id="cb11-355"><a href="#cb11-355" aria-hidden="true" tabindex="-1"></a>                                                     <span class="st">"rmsea"</span>,<span class="st">"rmsea.ci.lower"</span>,<span class="st">"rmsea.ci.upper"</span>),]</span>
+<span id="cb11-356"><a href="#cb11-356" aria-hidden="true" tabindex="-1"></a>sum_fit<span class="sc">$</span>nobs <span class="ot">&lt;-</span> <span class="fu">nobs</span>(m1_cfa)</span>
+<span id="cb11-357"><a href="#cb11-357" aria-hidden="true" tabindex="-1"></a>sum_fit<span class="sc">$</span>est  <span class="ot">&lt;-</span> <span class="fu">summary</span>(m1_cfa)<span class="sc">$</span>optim<span class="sc">$</span>estimator</span>
+<span id="cb11-358"><a href="#cb11-358" aria-hidden="true" tabindex="-1"></a>sum_fit <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(sum_fit) <span class="sc">%&gt;%</span></span>
+<span id="cb11-359"><a href="#cb11-359" aria-hidden="true" tabindex="-1"></a>      dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb11-360"><a href="#cb11-360" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">across</span>(</span>
+<span id="cb11-361"><a href="#cb11-361" aria-hidden="true" tabindex="-1"></a>          <span class="at">.cols =</span> <span class="fu">c</span>(cfi, tli, rmsea, rmsea.ci.lower, rmsea.ci.upper),</span>
+<span id="cb11-362"><a href="#cb11-362" aria-hidden="true" tabindex="-1"></a>          <span class="at">.fns  =</span> <span class="sc">~</span> <span class="fu">round</span>(., <span class="dv">3</span>)</span>
+<span id="cb11-363"><a href="#cb11-363" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb11-364"><a href="#cb11-364" aria-hidden="true" tabindex="-1"></a>        <span class="at">stars   =</span> gtools<span class="sc">::</span><span class="fu">stars.pval</span>(pvalue),</span>
+<span id="cb11-365"><a href="#cb11-365" aria-hidden="true" tabindex="-1"></a>        <span class="at">chisq   =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(chisq,<span class="dv">3</span>), <span class="st">" ("</span>, df, <span class="st">") "</span>, stars),</span>
+<span id="cb11-366"><a href="#cb11-366" aria-hidden="true" tabindex="-1"></a>        <span class="at">rmsea.ci=</span> <span class="fu">paste0</span>(rmsea, <span class="st">" ["</span>, rmsea.ci.lower, <span class="st">"-"</span>, rmsea.ci.upper, <span class="st">"]"</span>)</span>
+<span id="cb11-367"><a href="#cb11-367" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
+<span id="cb11-368"><a href="#cb11-368" aria-hidden="true" tabindex="-1"></a>      dplyr<span class="sc">::</span><span class="fu">select</span>(nobs, est, chisq, cfi, tli, rmsea.ci)</span>
+<span id="cb11-369"><a href="#cb11-369" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-370"><a href="#cb11-370" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-371"><a href="#cb11-371" aria-hidden="true" tabindex="-1"></a>sum_fit <span class="sc">%&gt;%</span></span>
+<span id="cb11-372"><a href="#cb11-372" aria-hidden="true" tabindex="-1"></a>    kableExtra<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb11-373"><a href="#cb11-373" aria-hidden="true" tabindex="-1"></a>      <span class="at">format     =</span> <span class="st">"markdown"</span>, </span>
+<span id="cb11-374"><a href="#cb11-374" aria-hidden="true" tabindex="-1"></a>      <span class="at">digits     =</span> <span class="dv">3</span>,</span>
+<span id="cb11-375"><a href="#cb11-375" aria-hidden="true" tabindex="-1"></a>      <span class="at">booktabs   =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb11-376"><a href="#cb11-376" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names  =</span> colnames_fit,</span>
+<span id="cb11-377"><a href="#cb11-377" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption    =</span> <span class="cn">NULL</span></span>
+<span id="cb11-378"><a href="#cb11-378" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb11-379"><a href="#cb11-379" aria-hidden="true" tabindex="-1"></a>    kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(</span>
+<span id="cb11-380"><a href="#cb11-380" aria-hidden="true" tabindex="-1"></a>      <span class="at">full_width        =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb11-381"><a href="#cb11-381" aria-hidden="true" tabindex="-1"></a>      <span class="at">font_size         =</span> <span class="dv">11</span>,</span>
+<span id="cb11-382"><a href="#cb11-382" aria-hidden="true" tabindex="-1"></a>      <span class="at">latex_options     =</span> <span class="st">"HOLD_position"</span>,</span>
+<span id="cb11-383"><a href="#cb11-383" aria-hidden="true" tabindex="-1"></a>      <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"bordered"</span>)</span>
+<span id="cb11-384"><a href="#cb11-384" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb11-385"><a href="#cb11-385" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-386"><a href="#cb11-386" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-387"><a href="#cb11-387" aria-hidden="true" tabindex="-1"></a>Siguiendo los criterios propuestos por Brown <span class="co">[</span><span class="ot">-@brown_confirmatory_2015</span><span class="co">]</span>, el modelo presenta un buen ajuste.</span>
+<span id="cb11-388"><a href="#cb11-388" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-389"><a href="#cb11-389" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-390"><a href="#cb11-390" aria-hidden="true" tabindex="-1"></a><span class="fu"># Referencias</span></span>
+<span id="cb11-391"><a href="#cb11-391" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-392"><a href="#cb11-392" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb11-393"><a href="#cb11-393" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb11-394"><a href="#cb11-394" aria-hidden="true" tabindex="-1"></a></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
+
 
 
 

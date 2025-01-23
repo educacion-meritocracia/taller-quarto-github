@@ -7,6 +7,8 @@ lang: en
 fontsize: 12pt
 format:
   html:
+    code-copy: true
+    code-tools: true
     toc: true
     toc-location: right
     toc-depth: 4
@@ -16,7 +18,6 @@ format:
     number-depth: 4
     theme:
       - cosmo
-    code-link: true
     title-block-banner: true
   pdf:
     number-sections: true
