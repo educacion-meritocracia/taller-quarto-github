@@ -123,13 +123,13 @@ Aquí mis notas
 :::
 
 
-# Y..., ¿para qué me sirve este taller? {data-background-color="#5f5758"}
+# Y..., ¿para qué me sirve este taller? 🤔 {data-background-color="#5f5758"}
 
 
 ---
 
-::: {.incremental style="font-size: 120%;"}
-Para llegar a [esto](https://educacion-meritocracia.github.io/taller-quarto-github/processing/documento_ejemplo.html)
+::: {.incremental style="font-size: 125%;"}
+Para llegar a [esto](https://educacion-meritocracia.github.io/taller-quarto-github/processing/documento_ejemplo.html) 👀
 
 
 ![](images/ej.png)
@@ -141,8 +141,8 @@ Para llegar a [esto](https://educacion-meritocracia.github.io/taller-quarto-gith
 
 # ¿Cómo? {data-background-color="#5f5758"}
 
-::: {style="font-size: 120%;"}
-Vamos paso a paso
+::: {style="font-size: 140%;"}
+Vamos paso a paso 🤓
 :::
 
 # Reproducibilidad y ciencia abierta {data-background-color="#5f5758"}
@@ -165,29 +165,14 @@ knitr::include_graphics(path = "images/flujo-herramientas.png", error = F)
 Significa que has detallado claramente tu proceso de investigación para que cualquiera pueda seguirlo y obtener los mismos resultados.
 :::
 
-```{r echo=FALSE, warning=FALSE, out.width="75%", fig.align='center'}
+```{r echo=FALSE, warning=FALSE, out.width="60%", fig.align='center'}
 knitr::include_graphics(path = "images/reproducibility.jpg", error = F)
 ```
 
 
-## ¿Qué porcentaje de los estudios publicados son reproducibles?
-
-::: {.pull-left-wide}
-
-![](https://correlacional.netlify.app/slides/img/reproducibility_science.png)
-
-:::
-
-:::{.pull-right-narrow}
-
-
-... alrededor de un **40%!** (... varía por disciplina)
-:::
-
-
 ## Herramientas para la reproducibilidad
 
-::: {.incremental .highlight-last style="font-size: 120%;"}
+::: {.incremental .highlight-last style="font-size: 110%;"}
 - Escritura abierta:  
 
     - texto simple/plano, libre de software comercial
@@ -204,63 +189,946 @@ knitr::include_graphics(path = "images/reproducibility.jpg", error = F)
 
 :::
 
-
-# Documentos dinámicos {data-background-color="#5f5758"}
-
+# Escritura abierta y documentos dinámicos {data-background-color="#5f5758"}
 
 
+## Procesador de texto tradicional
+
+
+::: {.pull-left-wide}
+
+![](https://2023--correlacional.netlify.app/files/word.png)
+
+:::
+
+::: {.pull-right-narrow .incremental style="font-size: 100%;"}
+
+- Probablemente el programa que más se ha utilizado para la escritura desde pregrado hasta el mundo profesional.
+
+- **Diversas barreas**: pago/licencia, versionamiento y no permite reproducibilidad
+:::
+
+## Escritura abierta y libre: texto plano
+
+::: {.incremental style="font-size: 110%;"}
+
+- No depende de programas comerciales o licencias específicas
+
+- Abierto y gratuito
+
+- **Permite combinar texto + código en un mismo documento = documento dinámico**
+
+- Bajas marcas de edición: enfásis en el contenido y no el formato
+
+- Distintas opciones de salida (pdf, html, word, etc.)
+
+:::
 
 
 
-# Quarto {data-background-color="#5f5758"}
+## Funcionamiento del texto plano
 
-## Quarto es...
+::: {.incremental style="font-size: 90%;"}
 
-::: {.incremental .highlight-last style="font-size: 110%;"}
+- Entorno: editor de texto
 
-- Sistema de publicación técnico y científico de código abierto. 
+- Se entrega un input que pasa por un proceso de renderización (Pandoc) para salir en diversos formatos
 
-- Es un lenguaje para crear y formatear documentos, similar a Markdown, aunque más general, con nuevas características, recursos y capacidades.
+- Separación entre el texto de entrada y de salida
+
+- Marcas de edición: vincula el texto de entrada con el de salida
+
+:::
+
+```{r echo=FALSE, warning=FALSE, out.width="75%", fig.align='center'}
+knitr::include_graphics(path = "https://2023--correlacional.netlify.app/files/render.png", error = F)
+```
+
+
+## Markdown
+
+::: {.incremental style="font-size: 90%;"}
+
+[Markdown](https://daringfireball.net/projects/markdown/) es una clase especial de lenguaje que permite darle formato a texto simple con pocas marcas. Por ejemplo, poder hacer cursivas, negritas, incorporar links, etc.
+
+:::
+
+::: {.pull-left-narrow}
+
+```{r echo=FALSE, warning=FALSE, out.width="50%", fig.align='center'}
+knitr::include_graphics(path = "https://jc-castillo.com/documents/talleres-cursos/markdown-mexico/slides/Markdown-mark.png", error = F)
+```
+
+
+:::
+
+::: {.pull-right-wide}
+```{r echo=FALSE, warning=FALSE, out.width="150%", fig.align='center'}
+knitr::include_graphics(path = "https://2023--correlacional.netlify.app/files/pandoc.png", error = F)
+```
+
+
+:::
+
+## Formatos básicos de Markdown
+
+::: {style="font-size: 60%;"}
++---------------------------------------------------+----------------------+--------------------------------------------------------------------------------+
+| Escribe...                                        | ...o...              | ...para obtener                                                                |
++===================================================+======================+================================================================================+
+|     Algo de texto en el párrafo.                  |                      | Algo de texto.                                                                 |
++---------------------------------------------------+----------------------+--------------------------------------------------------------------------------+
+| `` `*Cursivas*` ``                                | `` `_Cursivas_` ``   | *Cursivas*                                                                     |
++---------------------------------------------------+----------------------+--------------------------------------------------------------------------------+
+| `` `**Negrita**` ``                               | `` `__Negrita__` ``  | **Negrita**                                                                    |
++---------------------------------------------------+----------------------+--------------------------------------------------------------------------------+
+| `# Título 1`                                      |                      | # Título 1                                                                     |
++---------------------------------------------------+----------------------+--------------------------------------------------------------------------------+
+| `## Título 2`                                     |                      | ## Título 2                                                                    |
++---------------------------------------------------+----------------------+--------------------------------------------------------------------------------+
+| `### Título 3`                                    |                      | ### Título 3                                                                   |
++---------------------------------------------------+----------------------+--------------------------------------------------------------------------------+
+| (puedes llegar hasta un título N° 6 con `######`) |                      |                                                                                |
++---------------------------------------------------+----------------------+--------------------------------------------------------------------------------+
+| `` `[Link text](http://www.example.com)` ``       |                      | [Link text](http://www.example.com)                                            |
++---------------------------------------------------+----------------------+--------------------------------------------------------------------------------+
+| `` `![Image caption](/path/to/image.png)` ``      |                      | ![Class logo](https://2023--correlacional.netlify.app/files/img-144.png){alt="Class logo"}                            |
++---------------------------------------------------+----------------------+--------------------------------------------------------------------------------+
+
+:::
+## Formatos básicos de Markdown
+
+::: {style="font-size: 60%;"}
++---------------------------------------------------+----------------------+--------------------------------------------------------------------------------+
+| Escribe...                                        | ...o...              | ...para obtener                                                                |
++===================================================+======================+================================================================================+
+| \` \`\`\`Inline code\`\`\` \` with backticks      |                      | `Inline code` with backticks                                                   |
++---------------------------------------------------+----------------------+--------------------------------------------------------------------------------+
+| `> Citas`                                         |                      | > Citas                                                                        |
++---------------------------------------------------+----------------------+--------------------------------------------------------------------------------+
+|     - Cosas en                                    |     * Cosas en       | -   Cosas en                                                                   |
+|     - listas                                      |     * listas         |                                                                                |
+|     - desordenadas                                |     * desordenadas   | -   listas                                                                     |
+|                                                   |                      |                                                                                |
+|                                                   |                      | -   desordenadas                                                               |
++---------------------------------------------------+----------------------+--------------------------------------------------------------------------------+
+|     1. Cosas en                                   |     1) Cosas en      | 1.  Cosas en                                                                   |
+|     2. listas                                     |     2) listas        |                                                                                |
+|     3. ordenadas                                  |     3) ordenadas     | 2.  listas                                                                     |
+|                                                   |                      |                                                                                |
+|                                                   |                      | 3.  ordenadas                                                                  |
++---------------------------------------------------+----------------------+--------------------------------------------------------------------------------+
+|     Línea horizontal                              |     Línea horizontal | Línea horizontal                                                               |
+|                                                   |                      |                                                                                |
+|     ---                                           |     ***              | ------------------------------------------------------------------------       |
++---------------------------------------------------+----------------------+--------------------------------------------------------------------------------+
+
+
+:::
+
+# Quarto {.title-top-light background-image="https://mine.quarto.pub/hello-quarto/images/horst-quarto-meteor-transparent.png" aria-label="A meteor where the head of the meteor is the Quarto logo."}
+
+
+## Origen del nombre
+
+::: {style="font-size: 80%;"}
+
+Se refiere al formato de un libro o folleto producido a partir de hojas enteras impresas con ocho páginas de texto, cuatro por cara, y luego dobladas dos veces para producir cuatro hojas. El libro impreso europeo más antiguo que se conoce es un Quarto, el Sibyllenbuch, que se cree fue impreso por Johannes Gutenberg en 1452-1453.
+
+:::
+
+::: {.pull-left-narrow}
+
+
+```{r echo=FALSE, warning=FALSE, out.width="80%", fig.align='center'}
+knitr::include_graphics(path = "images/quarto1.jpg", error = F)
+```
+
+:::
+
+::: {.pull-right-narrow}
+
+
+```{r echo=FALSE, warning=FALSE, out.width="80%", fig.align='center'}
+knitr::include_graphics(path = "images/quarto2.jpg", error = F)
+```
+
+:::
+
+
+
+## Quarto® es...
+
+::: {.incremental .highlight-last style="font-size: 90%;"}
+
+- La nueva generación de R Markdown, para todos
+
+- Sistema de publicación científica y técnica de código abierto basado en Pandoc.
+
+- Lenguaje para crear y formatear documentos con nuevas características, recursos y capacidades.
 
 - No es exclusivo de R, también funciona con Python, Julia, y Observable.
 
-- Combina texto y plano y código; como R Markdown, Quarto usa knitr para ejcutar códigos de R.
+:::
+
+```{r echo=FALSE, warning=FALSE, out.width="70%", fig.align='center'}
+knitr::include_graphics(path = "images/horst-quarto-schematic.png", error = F)
+```
+
+## Con Quarto
+
+::: {.incremental style="font-size: 90%;"}
+
+Puede entrelazar **texto y código** para producir resultados con un formato elegante en forma de documentos, páginas web, entradas de blog, libros y mucho más, con...
+
+- implementación coherente de funciones atractivas y prácticas en todos los resultados
+- valores predeterminados que cumplen las directrices de accesibilidad
+- soporte multilingüe nativo para múltiples lenguajes 
+:::
+
+## Tour por Quarto
+
+::: {.our-turn style="font-size: 90%;"}
+- Ejecución de celdas individuales
+- Renderización de un documento
+- Edición con el editor de fuentes y el editor visual
+- Inserción de imágenes y efecto lightbox
+- Inserción de tablas
+- Personalización de formatos: `pdf`, `docx`, `revealjs`
+- Personalización de las opciones de formato:  `code-fold`, `toc`
+- Celdas de código: etiquetas, texto alternativo, opciones de ejecución (`echo`, `warning`)
+- Referencias cruzadas de figuras y tablas, con y sin el editor visual
+- Conversión entre Jupyter Notebooks y documentos Markdown de texto plano
+:::
+
+## ¿Cómo funciona?
+
+![](images/flujoquarto.jpg){fig-align="center"}
+
+::: {.incremental style="font-size: 90%;"}
+- `jupyter` o `knitr` evalúa código Python, Julia, R, u Observable y devuelve un archivo `.md` junto con el código evaluado
+- Quarto aplica filtros Lua + CSS/LaTeX que Pandoc evalúa junto con el archivo `.md` y convierte a un formato de salida final.
+:::
+
+
+#  Anatomía de un documento Quarto{ data-background-color="#5f5758"}
+
+## Componentes
+
+1. Metadata: YAML 
+2. Texto: Markdown
+3. Código: Ejecutado vía `knitr` para R
+
+## YAML
+
+::: {style="font-size: 90%;"}
+
+“Yet Another Markup Language” o “YAML Ain’t Markup Language” se usa para proveer al documento de la metadata.
+
+:::
+
+```yaml
+---
+key: value
+---
+```
+
+
+```yaml
+---
+format: something
+---
+```
+
+. . .
+
+<br>
+
+```yaml
+---
+format: html
+---
+```
+
+```yaml
+---
+format: pdf
+---
+```
+
+```yaml
+---
+format: revealjs
+---
+```
+## YAML
+
+El orden sí importa
+
+```yaml
+---
+format: 
+  html:
+    toc: true
+    code-fold: true
+---
+```
+
+## YAML válido {.smaller}
+
+::: {style="font-size: 100%;"}
+- Inválido: No hay espacio luego de `:`
+
+```yaml
+---
+format:html
+---
+```
+
+-   Inválido: La lectura no se reconoce
+
+```yaml
+---
+format:
+html
+---
+```
+
+-   Válido, pero necesita el objeto siguiente `:`
+
+```yaml
+---
+format: 
+  html:
+---
+```
+
+
+-   Válido: `format: html` con las selecciones haciendo identación correcta
+
+```yaml
+format: 
+  html:
+    toc: true
+```
+
+Lista definitiva de YAML'S válidos: [quarto.org/docs/reference/formats/html](https://quarto.org/docs/reference/formats/html.html)
 
 
 :::
 
-## Quarto es...
+## Texto
 
-::: {.incremental .highlight-last style="font-size: 110%;"}
+::: {style="font-size: 90%;"}
 
-- El término “Quarto” se refiere a una forma de producir libros o panfletos a partir de hojas grandes impresas con ocho páginas (cuatro en cada lado). Estas se pliegan dos veces y se recortan para formar ocho páginas finales, cada una con un cuarto del tamaño de la hoja original.
+Casi todo lo que conocemos con Markdown funciona en Quarto
 
-- El libro impreso más antiguo de Europa conocido es un quarto, el Sibyllenbuch, que se cree que fue impreso por Johannes Gutenberg en 1452-53, antes de la Biblia de Gutenberg, y que sobrevive solo como un fragmento
++-------------------------------+-------------------------------+
+| Markdown:              | Output:                       
++===============================+===============================+
+| ```                           | *italics* and **bold**        |
+| *italics* and **bold**        |                               |
+| ```                           |                               |
++-------------------------------+-------------------------------+
+| ```                           | superscript^2^ / subscript~2~ |
+| superscript^2^ / subscript~2~ |                               |
+| ```                           |                               |
++-------------------------------+-------------------------------+
+| ```                           | ~~strikethrough~~             |
+| ~~strikethrough~~             |                               |
+| ```                           |                               |
++-------------------------------+-------------------------------+
+| ```                           | `verbatim code`               |
+| `verbatim code`               |                               |
+| ```                           |                               |
++-------------------------------+-------------------------------+
+| ```                           | # Header 1                    |
+| # Header 1                    |                               |
+| ```                           |                               |
++-------------------------------+-------------------------------+
+| ```                           | ## Header 2                   |
+| # Header 2                    |                               |
+| ```                           |                               |
++-------------------------------+-------------------------------+
+| ```                           | ### Header 3                  |
+| # Header 3                    |                               |
+| ```                           |                               |
++-------------------------------+-------------------------------+
+| ```                           | #### Header 4                 |
+| # Header 4                    |                               |
+| ```                           |                               |
++-------------------------------+-------------------------------+
 
-- Nos remite a las ideas de la ciencia abierta y de universalizar el conocimiento
+: {tbl-colwidths="\[50,50\]"}
+
+Listas, links, imagenes y otros...
+
+:::
+## Código
+
+::: {style="font-size: 100%;"}
+
+La manera en que integramos código de R en un archivo Quarto es mediante chunks, que son trozos de código dentro de nuestra hoja. Estos permiten hacer análisis estadísticos dentro del documento visualizando los resultados en el documento final.
+
+
+### Añadir chunks
+
+Hay tres formas de insertar chunks:
+
+1. Pulsar ⌘⌥I en macOS o Control + Alt + I en Windows
+
+2. Pulsa el botón “Insert” en la parte superior de la ventana del editor
+
+3. Escribirlo manualmente (no recomendado)
+:::
+---
+## Nombrar chunks
+
+::: {style="font-size: 100%;"}
+
+Para añadir un nombre, inclúyelo inmediatamente después de la `{r` en la primera línea del chunk. Los nombres no pueden contener espacios, pero sí guiones bajos y guiones.
+
+Importante: **Todos los nombres de chunk de tu documento deben ser únicos.**
+
+````r
+```{r nombre-chunk}`r ''`
+1 + 1
+```
+````
+:::
+## Opciones de chunk
+
+::: {style="font-size: 90%;"}
+
+En Quarto, las opciones del chunk van inmediatamente después de la sección `{r}`. Para especificar una opción, se debe partir con `#|`, luego la opción y luego el valor lógico. Por ejemplo:
+
+- Añadir `eval: false`
+
+```{r}
+#| eval: false
+#| echo: fenced
+head(mtcars)
+```
+
+- Añadir `eval: true`
+
+```{r}
+#| eval: true
+#| echo: fenced
+head(mtcars)
+```
+
+:::
+## Opciones de chunk
+
+::: {style="font-size: 90%;"}
+
+- Añadir `message: false`
+
+```{r}
+#| message: false
+#| echo: fenced
+head(mtcars)
+```
+
+- Añadir `warning: false`
+
+```{r}
+#| warning: false
+#| echo: fenced
+head(mtcars)
+```
+:::
+
+## Opciones de chunk
+
+::: {style="font-size: 90%;"}
+- Añadir `include: false`
+````r
+```{r}`r ''`
+  #| include: false
+  head(mtcars)
+```
+````
+
+- Añadir `include: true`
+
+```{r}
+#| include: true
+#| echo: fenced
+head(mtcars)
+```
+
+:::
+
+## Opciones de chunk
+
+::: {style="font-size: 80%;"}
+- Añadir `echo: true`
+
+````r
+```{r}`r ''`
+  #| echo: true
+  head(mtcars)
+```
+````
+
+```{r}
+#| echo: true
+head(mtcars)
+```
+
+- Añadir `echo: false`
+
+````r
+```{r}`r ''`
+  #| echo: false
+  head(mtcars)
+```
+````
+
+```{r}
+#| echo: false
+head(mtcars)
+```
+
+:::
+
+## Opciones de chunk
+
+::: {style="font-size: 80%;"}
+
+- Hay distintas opciones que puedes establecer para cada chunk. Puedes ver una lista completa en la [Guía de referencia de RMarkdown](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) o en el [sitio web de **knitr**](https://yihui.org/knitr/options/). Estos recursos se crearon inicialmente para RMarkdown, pero también son aplicables a [Quarto](https://quarto.org/docs/computations/r.html#chunk-options).
+
+- Otra forma de hacerlo es **configurar** las opciones generales de todos los chunks que hagamos **al inicio del documento** en el YAML:
+
+```{r, echo=FALSE, out.width="30%", fig.align='center'}
+knitr::include_graphics("https://correlacional.netlify.app/files/yaml2.png", error = FALSE)
+```
+
+De esta manera ya no es necesario indicar en _cada_ chunk las opciones, y se aplicaran las configuraciones generales que indicamos al comienzo. 
 
 :::
 
 
+# Citas reproducibles {data-background-color="#5f5758"}
+
+## ¿Cómo trabajar con citas cuando se escribe en texto plano?
+
+<br>
+
+3 cosas a considerar:
+
+<br>
+
+### 1. Almacenamiento de referencias: Bibtex
+
+### 2. Generación de archivo de referencias: Zotero / BetterBibTex
+
+### 3. Citando en texto plano (markdown, Rmarkdown, Quarto y csl)
+
+# 1. Almacenamiento de referencias
+
+::::::: v-center-container
+:::::: columns
+::: {.column width="30%"}
+![](images/BibTeX_logo.svg.png)
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="50%"}
+-   formato de almacenamiento de citas en texto plano (no es un programa)
+
+-   Un archivo Bibtex tiene extensión **.bib**, donde deben estar almacenadas todas las referencias citadas en el texto
+:::
+::::::
+:::::::
+
+## Ejemplo referencia en Bibtex
+
+![](images/bibtex-record.png)
+
+## Archivo Bibtex (.bib)
+
+-   un archivo bibtex tiene múltiples referencias una después de la otra, el orden no es relevante.
+
+-   lo central en cada referencia es la llave de referencia o **citation key**, que está al principio e identifica cada referencia
+
+-   cada referencia posee una serie de campos con información necesaria para poder citar
+
+-   este formato se puede ingresar manualmente, copiar y pegar de otras fuentes, o automatizar desde software de gestión de referencias (detalles más adelante)
+
+-   [link a ejemplo archivo *merit-factorial.bib*](https://raw.githubusercontent.com/educacion-meritocracia/taller-quarto-github/refs/heads/main/input/bib/merit-factorial.bib)
+
+# 2. Generación de archivo de referencias
+
+## Utilizando Bibtex en escritura en texto simple
+
+-   es claro que tanto la generación manual de registros Bibtex como la incorporación manual de citas es un gran desincentivo a su uso.
+
+-   la simplificación y automatización de esto pasa por dos procesos:
+
+    -   Automatizar la **generación** de un archivo .bib desde un software de gestión de referencias (Zotero - BetterBibTex)
+
+    -   Automatizar la **incorporación** de citas al documento
+
+## 
+
+![](images/refman.jpg){width="80%" fig-align="center"}
+
+## Software de gestión de referencias
+
+-   los software de gestión de referencias bibliográficas permiten almacenar, organizar y luego utilizar las referencias
+
+-   diferentes alternativas de software de gestión de referencias bibliográficas: Endnote, Mendeley, Refworks, Zotero
+
+-   en adelante vamos a ejemplificar con **Zotero**, que es un software libre y de código abierto
+
+## 
+
+::: {.slarge .v-center-container .red}
+Vamos a usar Zotero para guardar y organizar nuestras referencias bibliográficas, y como *bot* para generar un archivo .bib
+:::
+
+## Zotero
+
+::::::: v-center-container
+:::::: columns
+::: {.column width="30%"}
+![](images/zotero.png){fig-align="center"}
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="50%"}
+-   instalar [https://www.zotero.org](zotero.org)
+
+-   además del programa, instalar "conector" para el navegador ( extensión que permite almacenar directamente con 1 click)
+:::
+::::::
+:::::::
+
+## Zotero: vista general
+
+### ![](https://www.zotero.org/static/images/home/screenshot-1.4.png)
+
+## Almacenamiento 1: vía conector navegador
+
+Cuando hay una referencia presente en la página, ir al botón del conector y se guarda (Zotero debe estar abierto)
+
+(la referencia se almacena en la carpeta que está activa en Zotero, se puede cambiar al momento de guardar)
+
+![](images/conector.png)
+
+## Almacenamiento 2: vía identificador DOI / ISBN / ISSN \]
+
+![](images/doizotero.png)\]
+
+## Almacenamiento 3: manual
+
+Llenando los campos uno por uno:
+
+![](images/zoteromanual.png)
+
+## 
+
+::: {.slarge .highlight-container-red .v-center-container}
+Al almacenar fijarse que los campos necesarios están completos y que los nombres de los mismos autores coinciden entre citas
+:::
+
+## Zotero
+
+-   más información sobre manejo y capacidades:
+
+<https://www.youtube.com/watch?v=Uxv3aE4XoNY>
+
+... y tutoriales y guías varios en la red
+
+## Zotero-Bibtex
+
+-   Zotero permite exportar las referencias en formato Bibtex
+
+-   Puede ser toda la colección o una parte (carpeta)
+
+-   2 alternativas:
+
+    -   manual
+    -   automatizada
+
+## Zotero-Bibtex: exportación manual
+
+<br>
+
+![](images/zoteroexport.png)
+
+-   Carpeta -\> boton derecho -\> export -\> formato Bibtex
+
+-   guardar archivo .bib en carpeta del proyecto
+
+## Zotero-Better Bibtex: exportación automatizada y sincronizada
+
+-   **BetterBibTex**: Zotero plug-in que permite exportación automática y sincronizada
+
+-   Instalación:
+
+    -   bajar archivo desde el sitio del desarrollador: <https://retorque.re/zotero-better-bibtex/installation/>
+
+    -   en Zotero: Tools -\> plugins -\> ruedita dentada -\> install add-on from file
+
+    -   reiniciar Zotero
+
+## Zotero-Better Bibtex
+
+![](images/betterbibtex.png)
+
+## Zotero-Better Bibtex: Exportando referencias
+
+-   puede ser colección completa o carpetas específicas
+
+-   posicionarse sobre carpeta, botón derecho y `Export collection`
+
+    ```         
+    - Formato: Better BibTex
+    - Keep updated (sincronización automática)
+    - dar ruta hacia carpeta del proyecto
+    ```
+
+-   precaución: no caracteres especiales ni espacios en el nombre del archivo .bib
+
+## Zotero-Better Bibtex - Exportando referencias
+
+![](images/exportbibtex.gif)
+
+## Zotero-bibtex: consideraciones sobre llaves
+
+-   multiples formas de organizar las llaves Bibtex
+
+-   mantener un mismo formato es relevante, sobre todo para trabajo colaborativo
+
+-   se generan desde la pestaña Citation Keys de BetterBibTex
+
+-   Recomendación:
+
+    -   `auth.lower+"_"+shorttitle(1).lower+"_"+year`
+
+# 3. Citando en texto plano
+
+## Para citar en texto plano:
+
+a.  Agregar el archivo .bib al preámbulo del documento
+b.  Agregar archivo de formato de bibliografía (csl)
+c.  Insertar citas
+
+## bib y csl en YAML
+
+::: {.slarge .highlight-container-red}
+
+    ````         
+    ---
+    title: "My document"
+    bibliography: input/bib/merit-factorial.bib
+    csl: "input/bib/apa6.csl"
+    ---
+
+     Y aquí comienza el documento ...
+    ````
+:::
+
+## Sobre .csl
+
+-   además de las referencias en .bib, necesitamos poder dar el estilo de formato deseado a citas y bibliografía, mediante archivos **csl** (citation style language)
+
+-   existen múltiples estilos de citación (alrededor de 10.000)
+
+-   los más usados: APA, ASA, Chicago
+
+-   estos estilos (en archivos csl) se pueden bajar desde repositorios, se recomienda el siguiente: <https://www.zotero.org/styles>
+
+## Citando
+
+La forma de citar es a través de la .red\[clave que identifica la referencia\], que es la que aparece al principio de cada una, y se agrega una \@. Ej:
+
+::: {.slarge}
+```         
+- Tal como señala @sabbagh_dimension_2003, los principales resultados ...
+```
+:::
+
+Al renderizar, esto genera:
+
+-   **Tal como señala Sabbagh (2003), los principales resultados ...**
+
+Y además, agrega la bibliografía al final del documento.
+
+## Opciones de citación
+
+<br>
+
+| Se escribe | Renderiza |
+|----|----|
+| `Como dice @sabbagh_dimension_2003` | Como dice Sabbagh (2003) |
+| `Evidencia señala [@sabbagh_dimension_2003]` | Evidencia señala (Sabbagh, 2020) |
+| `Sabbagh [@sabbagh_dimension_2003, pp.35] dice ...` | Sabbagh (2020, p.35) dice ... |
+
+-   Más de una cita: separadas por **;**
+
+## Citando en documentos Markdown/Quarto en R
+
+Diferentes formas, pero lo más fácil:
+
+-   visual mode
+-   presionar \@ y se despliegan las referencias del .bib
+-   insert -\> citations
 
 
-# Práctica: generando un reporte en Quarto {data-background-color="#5f5758"}
+# Repositorios y apertura {data-background-color="#5f5758"}
+
+##  {data-background-color="black"}
+
+::: {style="font-size: 150%;"}
+La escritura en texto simple (como Markdown o Quarto) permite implementar un sistema de control de versiones, además de herramientas de respaldo, colaboración y comunicación
+:::
+
+## El origen: Abriendo un sistema operativo
+
+::: columns
+::: {.column width="50%"}
+![](images/torvalds.png)
+:::
+
+::: {.column width="50%"}
+-   Linus Torvalds, 1991 (21 años)
+
+-   Crea sistema operativo libre (**Linux**) y lo abre a la colaboración. Postea:
+
+    -   "I'm doing a (free) operating system (just a hobby, won't be big and professional..."
+
+-   [TED talk](https://www.youtube.com/watch?v=o8NPllzkFhE&ab_channel=TED)
+:::
+:::
+
+## Git
+
+::: columns
+::: {.column width="40%"}
+![](images/git.png)
+:::
+
+::: {.column width="60%"}
+-   es una especie de memoria o registro local que guarda información sobre:
+
+    -   quién hizo un cambio
+    -   cuándo lo hizo
+    -   qué hizo
+
+-   mantiene la información de todos los cambios en la historia de la carpeta / repositorio local
+
+-   se puede sincronizar con un repositorio remoto (ej. Github)
+:::
+:::
+
+## Git/github
+
+:::: {style="font-size: 80%;"}
+
+::: columns
+::: {.column width="30%"}
+![](images/github.png)
+:::
+
+::: {.column width="70%"}
+-   actualmente, Git / Github posee más de 100 millones de repositorios
+
+-   mayor fuente de código en el mundo
+
+-   ha transitado desde el mundo de desarrollo de software hacia distintos ámbitos de trabajo colaborativo y abierto
+
+-   entorno de trabajo que favorece la ciencia abierta
+
+-   El 4 de junio de 2018 Microsoft compró GitHub por la cantidad de 7500 millones de dólares. Al inicio, el cambio de propietario generó preocupaciones y la salida de algunos proyectos de este sitio; sin embargo, no fueron representativos. GitHub continúa siendo la plataforma más importante de colaboración para proyectos de código abierto.
+:::
+:::
+::::
+
+##  {style="font-size: 120%;" data-background-color="#5f5758\""}
+
+-   Git no es un registro de versiones de archivos específicos, sino de una carpeta completa
+
+-   Guarda *"fotos"* de momentos específicos de la carpeta, y esta foto se *saca* mediante un [commit]{.red}
+
+## 
+
+![](images/gitflow.jpeg)
+
+## Commits
+
+-   El **commit** es el procedimiento fundamental del control de versiones
+
+-   Git no registra cualquier cambio que se "guarda", sino los que se "comprometen" (commit).
+
+-   En un **commit**
+
+    -   se seleccionan los archivos cuyo cambio se desea registrar (*stage*)
+    -   se registra lo que se está comprometiendo en el cambio (mensaje de commit)
+
+## ¿Cuándo hacer un commit?
+
+-   según conveniencia
+
+-   sugerencias:
+
+    -   que sea un momento que requiera registro (momento de foto)
+
+    -   no para cambios menores
+
+    -   no esperar muchos cambios distintos que puedan hacer perder el sentido del commit
+
+## Algunos términos
+::: {style="font-size: 75%;"}
 
 
 
+| Término | Definición                                                                                                                                      |
+|----|---------------|
+| Remote  | Un repositorio almacenado en Github, no en el equipo                                                                                            |
+| Clonar       | Para descargar una copia completa de los datos de un repositorio de Github.com, incluidas todas las versiones de cada archivo y carpeta.        |
+| Branch       | Una versión paralela de los archivos contenidos en el repositorio, pero que no afecta a la rama principal.                                      |
+| Fork         | Un nuevo repositorio que comparte la configuración de visibilidad y código con el repositorio "ascendente" original.                            |
+| Upstream     | La branch de un repositorio original que se ha *forkeado* o clonado. La branch correspondiente de la branch clonada se denomina "descendiente". |
+| Merge        | Para aplicar los cambios de una branch en otra.                                                                                                 |
+| Pull request | Una solicitud para combinar los cambios de una branch en otra.                                                                                  |
+:::
+
+## Branch
 
 
+-   Una **branch** es una versión paralela de los archivos contenidos en el repositorio, pero que no afecta a la rama principal.
+
+-   Permite el trabajo paralelo en distintos archivos.
 
 
+##
 
-# Texto simple, Markdown & citas {data-background-color="#5f5758"}
+![](images/branches.png)
 
-# Control de versiones / Git {data-background-color="#5f5758"}
+## Conflicted branch
 
-# Repositorio remoto / Github {data-background-color="#5f5758"}
-# Gracias por su atención! 
+-   Cuando trabajamos en el mismo archivo -y los modificamos- podemos generar un **conflicto de versiones** de un archivo cuando otra persona quiera hacer modificaciones
+
+![](images/conflicted-branch.png)
+
+## ¿Cómo evitar los conflictos de versiones?
+
+- Lo mejor es trabajar coordinadamente en tareas separadas (en momentos o archivos diferentes)
+
+- Mediante *pull request*, donde una persona a cargo decide qué modificaciones aceptar y cuando.
+
+# Práctica 👩‍💻: generando un reporte en Quarto con citas en una página Github {data-background-color="#5f5758"}
+
+
+# Gracias por su atención!🫶🏻
 
 -   **Github del proyecto:** <https://github.com/educacion-meritocracia>
-
-## Referencias
-

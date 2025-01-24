@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="intro_quarto_github_files/libs/revealjs/dist/theme/quarto.css">
   <link href="intro_quarto_github_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -363,20 +428,20 @@
 </section>
 <section>
 <section id="y-para-qué-me-sirve-este-taller" class="title-slide slide level1 center" data-background-color="#5f5758">
-<h1>Y…, ¿para qué me sirve este taller?</h1>
+<h1>Y…, ¿para qué me sirve este taller? 🤔</h1>
 
 </section>
 <section class="slide level2">
 
-<div style="font-size: 120%;">
-<p>Para llegar a <a href="https://educacion-meritocracia.github.io/taller-quarto-github/processing/documento_ejemplo.html">esto</a></p>
+<div style="font-size: 125%;">
+<p>Para llegar a <a href="https://educacion-meritocracia.github.io/taller-quarto-github/processing/documento_ejemplo.html">esto</a> 👀</p>
 <p><img data-src="images/ej.png"></p>
 </div>
 </section></section>
 <section id="cómo" class="title-slide slide level1 center" data-background-color="#5f5758">
 <h1>¿Cómo?</h1>
-<div style="font-size: 120%;">
-<p>Vamos paso a paso</p>
+<div style="font-size: 140%;">
+<p>Vamos paso a paso 🤓</p>
 </div>
 </section>
 
@@ -410,24 +475,15 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/reproducibility.jpg" class="quarto-figure quarto-figure-center" style="width:75.0%"></p>
+<p><img data-src="images/reproducibility.jpg" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="qué-porcentaje-de-los-estudios-publicados-son-reproducibles" class="slide level2">
-<h2>¿Qué porcentaje de los estudios publicados son reproducibles?</h2>
-<div class="pull-left-wide">
-<p><img data-src="https://correlacional.netlify.app/slides/img/reproducibility_science.png"></p>
-</div>
-<div class="pull-right-narrow">
-<p>… alrededor de un <strong>40%!</strong> (… varía por disciplina)</p>
-</div>
-</section>
 <section id="herramientas-para-la-reproducibilidad" class="slide level2">
 <h2>Herramientas para la reproducibilidad</h2>
-<div class="highlight-last" style="font-size: 120%;">
+<div class="highlight-last" style="font-size: 110%;">
 <ul>
 <li class="fragment"><p>Escritura abierta:</p>
 <ul>
@@ -442,72 +498,1111 @@
 </ul>
 </div>
 </section></section>
-<section id="documentos-dinámicos" class="title-slide slide level1 center" data-background-color="#5f5758">
-<h1>Documentos dinámicos</h1>
+<section>
+<section id="escritura-abierta-y-documentos-dinámicos" class="title-slide slide level1 center" data-background-color="#5f5758">
+<h1>Escritura abierta y documentos dinámicos</h1>
 
 </section>
+<section id="procesador-de-texto-tradicional" class="slide level2">
+<h2>Procesador de texto tradicional</h2>
+<div class="pull-left-wide">
+<p><img data-src="https://2023--correlacional.netlify.app/files/word.png"></p>
+</div>
+<div class="pull-right-narrow" style="font-size: 100%;">
+<ul>
+<li class="fragment"><p>Probablemente el programa que más se ha utilizado para la escritura desde pregrado hasta el mundo profesional.</p></li>
+<li class="fragment"><p><strong>Diversas barreas</strong>: pago/licencia, versionamiento y no permite reproducibilidad</p></li>
+</ul>
+</div>
+</section>
+<section id="escritura-abierta-y-libre-texto-plano" class="slide level2">
+<h2>Escritura abierta y libre: texto plano</h2>
+<div style="font-size: 110%;">
+<ul>
+<li class="fragment"><p>No depende de programas comerciales o licencias específicas</p></li>
+<li class="fragment"><p>Abierto y gratuito</p></li>
+<li class="fragment"><p><strong>Permite combinar texto + código en un mismo documento = documento dinámico</strong></p></li>
+<li class="fragment"><p>Bajas marcas de edición: enfásis en el contenido y no el formato</p></li>
+<li class="fragment"><p>Distintas opciones de salida (pdf, html, word, etc.)</p></li>
+</ul>
+</div>
+</section>
+<section id="funcionamiento-del-texto-plano" class="slide level2">
+<h2>Funcionamiento del texto plano</h2>
+<div style="font-size: 90%;">
+<ul>
+<li class="fragment"><p>Entorno: editor de texto</p></li>
+<li class="fragment"><p>Se entrega un input que pasa por un proceso de renderización (Pandoc) para salir en diversos formatos</p></li>
+<li class="fragment"><p>Separación entre el texto de entrada y de salida</p></li>
+<li class="fragment"><p>Marcas de edición: vincula el texto de entrada con el de salida</p></li>
+</ul>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://2023--correlacional.netlify.app/files/render.png" class="quarto-figure quarto-figure-center" style="width:75.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="markdown" class="slide level2">
+<h2>Markdown</h2>
+<div style="font-size: 90%;">
+<p><a href="https://daringfireball.net/projects/markdown/">Markdown</a> es una clase especial de lenguaje que permite darle formato a texto simple con pocas marcas. Por ejemplo, poder hacer cursivas, negritas, incorporar links, etc.</p>
+</div>
+<div class="pull-left-narrow">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://jc-castillo.com/documents/talleres-cursos/markdown-mexico/slides/Markdown-mark.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="pull-right-wide">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://2023--correlacional.netlify.app/files/pandoc.png" class="quarto-figure quarto-figure-center" style="width:150.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="formatos-básicos-de-markdown" class="slide level2">
+<h2>Formatos básicos de Markdown</h2>
+<div style="font-size: 60%;">
+<table>
+<tbody>
+<tr class="odd">
+<td><h1 id="escribe">Escribe…</h1>
+<pre><code> Algo de texto en el párrafo.</code></pre></td>
+<td><h1 id="o">…o…</h1></td>
+<td><h1 id="para-obtener">…para obtener</h1>
+<p>Algo de texto.</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>`*Cursivas*`</code></td>
+<td><code>`_Cursivas_`</code></td>
+<td><em>Cursivas</em></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>`**Negrita**`</code></td>
+<td><code>`__Negrita__`</code></td>
+<td><strong>Negrita</strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code># Título 1</code></td>
+<td></td>
+<td><h1 id="título-1">Título 1</h1></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>## Título 2</code></td>
+<td></td>
+<td><h2 id="título-2">Título 2</h2></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>### Título 3</code></td>
+<td></td>
+<td><h3 id="título-3">Título 3</h3></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>(puedes llegar hasta un título N° 6 con <code>######</code>)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>`[Link text](http://www.example.com)`</code></td>
+<td></td>
+<td><a href="http://www.example.com">Link text</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>`![Image caption](/path/to/image.png)`</code></td>
+<td></td>
+<td><div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://2023--correlacional.netlify.app/files/img-144.png"></p>
+<figcaption>Class logo</figcaption>
+</figure>
+</div></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="formatos-básicos-de-markdown-1" class="slide level2">
+<h2>Formatos básicos de Markdown</h2>
+<div style="font-size: 60%;">
+<table style="width:99%;">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 14%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Escribe…</th>
+<th>…o…</th>
+<th>…para obtener</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>` ```Inline code``` ` with backticks</td>
+<td></td>
+<td><code>Inline code</code> with backticks</td>
+</tr>
+<tr class="even">
+<td><code>&gt; Citas</code></td>
+<td></td>
+<td><blockquote>
+<p>Citas</p>
+</blockquote></td>
+</tr>
+<tr class="odd">
+<td><pre><code>- Cosas en
+- listas
+- desordenadas</code></pre></td>
+<td><pre><code>* Cosas en
+* listas
+* desordenadas</code></pre></td>
+<td><ul>
+<li><p>Cosas en</p></li>
+<li><p>listas</p></li>
+<li><p>desordenadas</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td><pre><code>1. Cosas en
+2. listas
+3. ordenadas</code></pre></td>
+<td><pre><code>1) Cosas en
+2) listas
+3) ordenadas</code></pre></td>
+<td><ol type="1">
+<li><p>Cosas en</p></li>
+<li><p>listas</p></li>
+<li><p>ordenadas</p></li>
+</ol></td>
+</tr>
+<tr class="odd">
+<td><pre><code>Línea horizontal
 
+---</code></pre></td>
+<td><pre><code>Línea horizontal
+
+***</code></pre></td>
+<td><p>Línea horizontal</p>
+<hr></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section></section>
 <section>
-<section id="quarto" class="title-slide slide level1 center" data-background-color="#5f5758">
+<section id="quarto" class="title-slide slide level1 title-top-light center" data-background-image="https://mine.quarto.pub/hello-quarto/images/horst-quarto-meteor-transparent.png" aria-label="A meteor where the head of the meteor is the Quarto logo.">
 <h1>Quarto</h1>
 
 </section>
+<section id="origen-del-nombre" class="slide level2">
+<h2>Origen del nombre</h2>
+<div style="font-size: 80%;">
+<p>Se refiere al formato de un libro o folleto producido a partir de hojas enteras impresas con ocho páginas de texto, cuatro por cara, y luego dobladas dos veces para producir cuatro hojas. El libro impreso europeo más antiguo que se conoce es un Quarto, el Sibyllenbuch, que se cree fue impreso por Johannes Gutenberg en 1452-1453.</p>
+</div>
+<div class="pull-left-narrow">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/quarto1.jpg" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="pull-right-narrow">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/quarto2.jpg" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="quarto-es" class="slide level2">
-<h2>Quarto es…</h2>
-<div class="highlight-last" style="font-size: 110%;">
+<h2>Quarto® es…</h2>
+<div class="highlight-last" style="font-size: 90%;">
 <ul>
-<li class="fragment"><p>Sistema de publicación técnico y científico de código abierto.</p></li>
-<li class="fragment"><p>Es un lenguaje para crear y formatear documentos, similar a Markdown, aunque más general, con nuevas características, recursos y capacidades.</p></li>
+<li class="fragment"><p>La nueva generación de R Markdown, para todos</p></li>
+<li class="fragment"><p>Sistema de publicación científica y técnica de código abierto basado en Pandoc.</p></li>
+<li class="fragment"><p>Lenguaje para crear y formatear documentos con nuevas características, recursos y capacidades.</p></li>
 <li class="fragment"><p>No es exclusivo de R, también funciona con Python, Julia, y Observable.</p></li>
-<li class="fragment"><p>Combina texto y plano y código; como R Markdown, Quarto usa knitr para ejcutar códigos de R.</p></li>
+</ul>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/horst-quarto-schematic.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="con-quarto" class="slide level2">
+<h2>Con Quarto</h2>
+<div style="font-size: 90%;">
+<p>Puede entrelazar <strong>texto y código</strong> para producir resultados con un formato elegante en forma de documentos, páginas web, entradas de blog, libros y mucho más, con…</p>
+<ul>
+<li class="fragment">implementación coherente de funciones atractivas y prácticas en todos los resultados</li>
+<li class="fragment">valores predeterminados que cumplen las directrices de accesibilidad</li>
+<li class="fragment">soporte multilingüe nativo para múltiples lenguajes</li>
 </ul>
 </div>
 </section>
-<section id="quarto-es-1" class="slide level2">
-<h2>Quarto es…</h2>
-<div class="highlight-last" style="font-size: 110%;">
+<section id="tour-por-quarto" class="slide level2">
+<h2>Tour por Quarto</h2>
+<div class="our-turn" style="font-size: 90%;">
 <ul>
-<li class="fragment"><p>El término “Quarto” se refiere a una forma de producir libros o panfletos a partir de hojas grandes impresas con ocho páginas (cuatro en cada lado). Estas se pliegan dos veces y se recortan para formar ocho páginas finales, cada una con un cuarto del tamaño de la hoja original.</p></li>
-<li class="fragment"><p>El libro impreso más antiguo de Europa conocido es un quarto, el Sibyllenbuch, que se cree que fue impreso por Johannes Gutenberg en 1452-53, antes de la Biblia de Gutenberg, y que sobrevive solo como un fragmento</p></li>
-<li class="fragment"><p>Nos remite a las ideas de la ciencia abierta y de universalizar el conocimiento</p></li>
+<li>Ejecución de celdas individuales</li>
+<li>Renderización de un documento</li>
+<li>Edición con el editor de fuentes y el editor visual</li>
+<li>Inserción de imágenes y efecto lightbox</li>
+<li>Inserción de tablas</li>
+<li>Personalización de formatos: <code>pdf</code>, <code>docx</code>, <code>revealjs</code></li>
+<li>Personalización de las opciones de formato: <code>code-fold</code>, <code>toc</code></li>
+<li>Celdas de código: etiquetas, texto alternativo, opciones de ejecución (<code>echo</code>, <code>warning</code>)</li>
+<li>Referencias cruzadas de figuras y tablas, con y sin el editor visual</li>
+<li>Conversión entre Jupyter Notebooks y documentos Markdown de texto plano</li>
+</ul>
+</div>
+</section>
+<section id="cómo-funciona" class="slide level2">
+<h2>¿Cómo funciona?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/flujoquarto.jpg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<div style="font-size: 90%;">
+<ul>
+<li class="fragment"><code>jupyter</code> o <code>knitr</code> evalúa código Python, Julia, R, u Observable y devuelve un archivo <code>.md</code> junto con el código evaluado</li>
+<li class="fragment">Quarto aplica filtros Lua + CSS/LaTeX que Pandoc evalúa junto con el archivo <code>.md</code> y convierte a un formato de salida final.</li>
 </ul>
 </div>
 </section></section>
-<section id="práctica-generando-un-reporte-en-quarto" class="title-slide slide level1 center" data-background-color="#5f5758">
-<h1>Práctica: generando un reporte en Quarto</h1>
-
-</section>
-
-<section id="texto-simplemarkdown-citas" class="title-slide slide level1 center" data-background-color="#5f5758">
-<h1>Texto simple,Markdown &amp; citas</h1>
-
-</section>
-
-<section id="control-de-versiones-git" class="title-slide slide level1 center" data-background-color="#5f5758">
-<h1>Control de versiones / Git</h1>
-
-</section>
-
-<section id="repositorio-remoto-github" class="title-slide slide level1 center" data-background-color="#5f5758">
-<h1>Repositorio remoto / Github</h1>
-
-</section>
-
 <section>
+<section id="anatomía-de-un-documento-quarto" class="title-slide slide level1 center" data-background-color="#5f5758">
+<h1>Anatomía de un documento Quarto</h1>
+
+</section>
+<section id="componentes" class="slide level2">
+<h2>Componentes</h2>
+<ol type="1">
+<li>Metadata: YAML</li>
+<li>Texto: Markdown</li>
+<li>Código: Ejecutado vía <code>knitr</code> para R</li>
+</ol>
+</section>
+<section id="yaml" class="slide level2">
+<h2>YAML</h2>
+<div style="font-size: 90%;">
+<p>“Yet Another Markup Language” o “YAML Ain’t Markup Language” se usa para proveer al documento de la metadata.</p>
+</div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb8-2"><a href=""></a><span class="fu">key</span><span class="kw">:</span><span class="at"> value</span></span>
+<span id="cb8-3"><a href=""></a><span class="pp">---</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb9-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> something</span></span>
+<span id="cb9-3"><a href=""></a><span class="pp">---</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p><br></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb10-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb10-3"><a href=""></a><span class="pp">---</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb11-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> pdf</span></span>
+<span id="cb11-3"><a href=""></a><span class="pp">---</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb12-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> revealjs</span></span>
+<span id="cb12-3"><a href=""></a><span class="pp">---</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="yaml-1" class="slide level2">
+<h2>YAML</h2>
+<p>El orden sí importa</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb13-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb13-3"><a href=""></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb13-4"><a href=""></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb13-5"><a href=""></a><span class="at">    </span><span class="fu">code-fold</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb13-6"><a href=""></a><span class="pp">---</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="yaml-válido" class="slide level2 smaller">
+<h2>YAML válido</h2>
+<div style="font-size: 100%;">
+<ul>
+<li>Inválido: No hay espacio luego de <code>:</code></li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb14-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb14-2"><a href=""></a><span class="at">format:html</span></span>
+<span id="cb14-3"><a href=""></a><span class="pp">---</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Inválido: La lectura no se reconoce</li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb15-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb15-3"><a href=""></a><span class="at">html</span></span>
+<span id="cb15-4"><a href=""></a><span class="pp">---</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Válido, pero necesita el objeto siguiente <code>:</code></li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb16-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb16-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb16-3"><a href=""></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb16-4"><a href=""></a><span class="pp">---</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Válido: <code>format: html</code> con las selecciones haciendo identación correcta</li>
+</ul>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb17-2"><a href=""></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb17-3"><a href=""></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Lista definitiva de YAML’S válidos: <a href="https://quarto.org/docs/reference/formats/html.html">quarto.org/docs/reference/formats/html</a></p>
+</div>
+</section>
+<section id="texto" class="slide level2">
+<h2>Texto</h2>
+<div style="font-size: 90%;">
+<p>Casi todo lo que conocemos con Markdown funciona en Quarto</p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown: | Output:</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><pre><code>*italics* and **bold**</code></pre></td>
+<td><em>italics</em> and <strong>bold</strong></td>
+</tr>
+<tr class="even">
+<td><pre><code>superscript^2^ / subscript~2~</code></pre></td>
+<td>superscript<sup>2</sup> / subscript<sub>2</sub></td>
+</tr>
+<tr class="odd">
+<td><pre><code>~~strikethrough~~</code></pre></td>
+<td><del>strikethrough</del></td>
+</tr>
+<tr class="even">
+<td><pre><code>`verbatim code`</code></pre></td>
+<td><code>verbatim code</code></td>
+</tr>
+<tr class="odd">
+<td><pre><code># Header 1</code></pre></td>
+<td><h1 id="header-1">Header 1</h1></td>
+</tr>
+<tr class="even">
+<td><pre><code># Header 2</code></pre></td>
+<td><h2 id="header-2">Header 2</h2></td>
+</tr>
+<tr class="odd">
+<td><pre><code># Header 3</code></pre></td>
+<td><h3 id="header-3">Header 3</h3></td>
+</tr>
+<tr class="even">
+<td><pre><code># Header 4</code></pre></td>
+<td><h4 id="header-4">Header 4</h4></td>
+</tr>
+</tbody>
+</table>
+<p>Listas, links, imagenes y otros…</p>
+</div>
+</section>
+<section id="código" class="slide level2">
+<h2>Código</h2>
+<div style="font-size: 100%;">
+<p>La manera en que integramos código de R en un archivo Quarto es mediante chunks, que son trozos de código dentro de nuestra hoja. Estos permiten hacer análisis estadísticos dentro del documento visualizando los resultados en el documento final.</p>
+<h3 id="añadir-chunks">Añadir chunks</h3>
+<p>Hay tres formas de insertar chunks:</p>
+<ol type="1">
+<li><p>Pulsar ⌘⌥I en macOS o Control + Alt + I en Windows</p></li>
+<li><p>Pulsa el botón “Insert” en la parte superior de la ventana del editor</p></li>
+<li><p>Escribirlo manualmente (no recomendado)</p></li>
+</ol>
+</div>
+</section>
+<section id="nombrar-chunks" class="slide level2">
+<h2>Nombrar chunks</h2>
+<div style="font-size: 100%;">
+<p>Para añadir un nombre, inclúyelo inmediatamente después de la <code>{r</code> en la primera línea del chunk. Los nombres no pueden contener espacios, pero sí guiones bajos y guiones.</p>
+<p>Importante: <strong>Todos los nombres de chunk de tu documento deben ser únicos.</strong></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a><span class="st">```</span><span class="at">{r nombre-chunk}</span></span>
+<span id="cb26-2"><a href=""></a><span class="at">1 + 1</span></span>
+<span id="cb26-3"><a href=""></a><span class="st">```</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="opciones-de-chunk" class="slide level2">
+<h2>Opciones de chunk</h2>
+<div style="font-size: 90%;">
+<p>En Quarto, las opciones del chunk van inmediatamente después de la sección <code>{r}</code>. Para especificar una opción, se debe partir con <code>#|</code>, luego la opción y luego el valor lógico. Por ejemplo:</p>
+<ul>
+<li>Añadir <code>eval: false</code></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb27-2"><a href=""></a><span class="in">#| eval: false</span></span>
+<span id="cb27-3"><a href=""></a><span class="in">head(mtcars)</span></span>
+<span id="cb27-4"><a href=""></a><span class="in">```</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Añadir <code>eval: true</code></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb28-2"><a href=""></a><span class="in">#| eval: true</span></span>
+<span id="cb28-3"><a href=""></a><span class="in">head(mtcars)</span></span>
+<span id="cb28-4"><a href=""></a><span class="in">```</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>#&gt;                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+#&gt; Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+#&gt; Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+#&gt; Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+#&gt; Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+#&gt; Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+#&gt; Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+</div>
+</div>
+</section>
+<section id="opciones-de-chunk-1" class="slide level2">
+<h2>Opciones de chunk</h2>
+<div style="font-size: 90%;">
+<ul>
+<li>Añadir <code>message: false</code></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb30-2"><a href=""></a><span class="in">#| message: false</span></span>
+<span id="cb30-3"><a href=""></a><span class="in">head(mtcars)</span></span>
+<span id="cb30-4"><a href=""></a><span class="in">```</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>#&gt;                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+#&gt; Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+#&gt; Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+#&gt; Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+#&gt; Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+#&gt; Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+#&gt; Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+</div>
+<ul>
+<li>Añadir <code>warning: false</code></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb32-2"><a href=""></a><span class="in">#| warning: false</span></span>
+<span id="cb32-3"><a href=""></a><span class="in">head(mtcars)</span></span>
+<span id="cb32-4"><a href=""></a><span class="in">```</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>#&gt;                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+#&gt; Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+#&gt; Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+#&gt; Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+#&gt; Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+#&gt; Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+#&gt; Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+</div>
+</div>
+</section>
+<section id="opciones-de-chunk-2" class="slide level2">
+<h2>Opciones de chunk</h2>
+<div style="font-size: 90%;">
+<ul>
+<li>Añadir <code>include: false</code></li>
+</ul>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a><span class="st">```</span><span class="at">{r}</span></span>
+<span id="cb34-2"><a href=""></a><span class="at">  #| include: false</span></span>
+<span id="cb34-3"><a href=""></a><span class="at">  head(mtcars)</span></span>
+<span id="cb34-4"><a href=""></a><span class="st">```</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Añadir <code>include: true</code></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb35-2"><a href=""></a><span class="in">#| include: true</span></span>
+<span id="cb35-3"><a href=""></a><span class="in">head(mtcars)</span></span>
+<span id="cb35-4"><a href=""></a><span class="in">```</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>#&gt;                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+#&gt; Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+#&gt; Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+#&gt; Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+#&gt; Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+#&gt; Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+#&gt; Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+</div>
+</div>
+</section>
+<section id="opciones-de-chunk-3" class="slide level2">
+<h2>Opciones de chunk</h2>
+<div style="font-size: 80%;">
+<ul>
+<li>Añadir <code>echo: true</code></li>
+</ul>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href=""></a><span class="st">```</span><span class="at">{r}</span></span>
+<span id="cb37-2"><a href=""></a><span class="at">  #| echo: true</span></span>
+<span id="cb37-3"><a href=""></a><span class="at">  head(mtcars)</span></span>
+<span id="cb37-4"><a href=""></a><span class="st">```</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href=""></a><span class="fu">head</span>(mtcars)</span>
+<span id="cb38-2"><a href=""></a><span class="co">#&gt;                    mpg cyl disp  hp drat    wt  qsec vs am gear carb</span></span>
+<span id="cb38-3"><a href=""></a><span class="co">#&gt; Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4</span></span>
+<span id="cb38-4"><a href=""></a><span class="co">#&gt; Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4</span></span>
+<span id="cb38-5"><a href=""></a><span class="co">#&gt; Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1</span></span>
+<span id="cb38-6"><a href=""></a><span class="co">#&gt; Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1</span></span>
+<span id="cb38-7"><a href=""></a><span class="co">#&gt; Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2</span></span>
+<span id="cb38-8"><a href=""></a><span class="co">#&gt; Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Añadir <code>echo: false</code></li>
+</ul>
+<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href=""></a><span class="st">```</span><span class="at">{r}</span></span>
+<span id="cb39-2"><a href=""></a><span class="at">  #| echo: false</span></span>
+<span id="cb39-3"><a href=""></a><span class="at">  head(mtcars)</span></span>
+<span id="cb39-4"><a href=""></a><span class="st">```</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<pre><code>#&gt;                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+#&gt; Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+#&gt; Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+#&gt; Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+#&gt; Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+#&gt; Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+#&gt; Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+</div>
+</div>
+</section>
+<section id="opciones-de-chunk-4" class="slide level2">
+<h2>Opciones de chunk</h2>
+<div style="font-size: 80%;">
+<ul>
+<li><p>Hay distintas opciones que puedes establecer para cada chunk. Puedes ver una lista completa en la <a href="https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">Guía de referencia de RMarkdown</a> o en el <a href="https://yihui.org/knitr/options/">sitio web de <strong>knitr</strong></a>. Estos recursos se crearon inicialmente para RMarkdown, pero también son aplicables a <a href="https://quarto.org/docs/computations/r.html#chunk-options">Quarto</a>.</p></li>
+<li><p>Otra forma de hacerlo es <strong>configurar</strong> las opciones generales de todos los chunks que hagamos <strong>al inicio del documento</strong> en el YAML:</p></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://correlacional.netlify.app/files/yaml2.png" class="quarto-figure quarto-figure-center" style="width:30.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>De esta manera ya no es necesario indicar en <em>cada</em> chunk las opciones, y se aplicaran las configuraciones generales que indicamos al comienzo.</p>
+</div>
+</section></section>
+<section>
+<section id="citas-reproducibles" class="title-slide slide level1 center" data-background-color="#5f5758">
+<h1>Citas reproducibles</h1>
+
+</section>
+<section id="cómo-trabajar-con-citas-cuando-se-escribe-en-texto-plano" class="slide level2">
+<h2>¿Cómo trabajar con citas cuando se escribe en texto plano?</h2>
+<p><br></p>
+<p>3 cosas a considerar:</p>
+<p><br></p>
+<h3 id="almacenamiento-de-referencias-bibtex">1. Almacenamiento de referencias: Bibtex</h3>
+<h3 id="generación-de-archivo-de-referencias-zotero-betterbibtex">2. Generación de archivo de referencias: Zotero / BetterBibTex</h3>
+<h3 id="citando-en-texto-plano-markdown-rmarkdown-quarto-y-csl">3. Citando en texto plano (markdown, Rmarkdown, Quarto y csl)</h3>
+</section></section>
+<section>
+<section id="almacenamiento-de-referencias" class="title-slide slide level1 center">
+<h1>1. Almacenamiento de referencias</h1>
+<div class="v-center-container">
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="images/BibTeX_logo.svg.png"></p>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p>formato de almacenamiento de citas en texto plano (no es un programa)</p></li>
+<li><p>Un archivo Bibtex tiene extensión <strong>.bib</strong>, donde deben estar almacenadas todas las referencias citadas en el texto</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="ejemplo-referencia-en-bibtex" class="slide level2">
+<h2>Ejemplo referencia en Bibtex</h2>
+<p><img data-src="images/bibtex-record.png"></p>
+</section>
+<section id="archivo-bibtex-.bib" class="slide level2">
+<h2>Archivo Bibtex (.bib)</h2>
+<ul>
+<li><p>un archivo bibtex tiene múltiples referencias una después de la otra, el orden no es relevante.</p></li>
+<li><p>lo central en cada referencia es la llave de referencia o <strong>citation key</strong>, que está al principio e identifica cada referencia</p></li>
+<li><p>cada referencia posee una serie de campos con información necesaria para poder citar</p></li>
+<li><p>este formato se puede ingresar manualmente, copiar y pegar de otras fuentes, o automatizar desde software de gestión de referencias (detalles más adelante)</p></li>
+<li><p><a href="https://raw.githubusercontent.com/educacion-meritocracia/taller-quarto-github/refs/heads/main/input/bib/merit-factorial.bib">link a ejemplo archivo <em>merit-factorial.bib</em></a></p></li>
+</ul>
+</section></section>
+<section>
+<section id="generación-de-archivo-de-referencias" class="title-slide slide level1 center">
+<h1>2. Generación de archivo de referencias</h1>
+
+</section>
+<section id="utilizando-bibtex-en-escritura-en-texto-simple" class="slide level2">
+<h2>Utilizando Bibtex en escritura en texto simple</h2>
+<ul>
+<li><p>es claro que tanto la generación manual de registros Bibtex como la incorporación manual de citas es un gran desincentivo a su uso.</p></li>
+<li><p>la simplificación y automatización de esto pasa por dos procesos:</p>
+<ul>
+<li><p>Automatizar la <strong>generación</strong> de un archivo .bib desde un software de gestión de referencias (Zotero - BetterBibTex)</p></li>
+<li><p>Automatizar la <strong>incorporación</strong> de citas al documento</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/refman.jpg" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+</section>
+<section id="software-de-gestión-de-referencias" class="slide level2">
+<h2>Software de gestión de referencias</h2>
+<ul>
+<li><p>los software de gestión de referencias bibliográficas permiten almacenar, organizar y luego utilizar las referencias</p></li>
+<li><p>diferentes alternativas de software de gestión de referencias bibliográficas: Endnote, Mendeley, Refworks, Zotero</p></li>
+<li><p>en adelante vamos a ejemplificar con <strong>Zotero</strong>, que es un software libre y de código abierto</p></li>
+</ul>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="slarge v-center-container red">
+<p>Vamos a usar Zotero para guardar y organizar nuestras referencias bibliográficas, y como <em>bot</em> para generar un archivo .bib</p>
+</div>
+</section>
+<section id="zotero" class="slide level2">
+<h2>Zotero</h2>
+<div class="v-center-container">
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/zotero.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p>instalar <a href="zotero.org">https://www.zotero.org</a></p></li>
+<li><p>además del programa, instalar “conector” para el navegador ( extensión que permite almacenar directamente con 1 click)</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="zotero-vista-general" class="slide level2">
+<h2>Zotero: vista general</h2>
+<h3 id="section-2"><img data-src="https://www.zotero.org/static/images/home/screenshot-1.4.png"></h3>
+</section>
+<section id="almacenamiento-1-vía-conector-navegador" class="slide level2">
+<h2>Almacenamiento 1: vía conector navegador</h2>
+<p>Cuando hay una referencia presente en la página, ir al botón del conector y se guarda (Zotero debe estar abierto)</p>
+<p>(la referencia se almacena en la carpeta que está activa en Zotero, se puede cambiar al momento de guardar)</p>
+<p><img data-src="images/conector.png"></p>
+</section>
+<section id="almacenamiento-2-vía-identificador-doi-isbn-issn" class="slide level2">
+<h2>Almacenamiento 2: vía identificador DOI / ISBN / ISSN ]</h2>
+<p><img data-src="images/doizotero.png">]</p>
+</section>
+<section id="almacenamiento-3-manual" class="slide level2">
+<h2>Almacenamiento 3: manual</h2>
+<p>Llenando los campos uno por uno:</p>
+<p><img data-src="images/zoteromanual.png"></p>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<div class="slarge highlight-container-red v-center-container">
+<p>Al almacenar fijarse que los campos necesarios están completos y que los nombres de los mismos autores coinciden entre citas</p>
+</div>
+</section>
+<section id="zotero-1" class="slide level2">
+<h2>Zotero</h2>
+<ul>
+<li>más información sobre manejo y capacidades:</li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=Uxv3aE4XoNY" class="uri">https://www.youtube.com/watch?v=Uxv3aE4XoNY</a></p>
+<p>… y tutoriales y guías varios en la red</p>
+</section>
+<section id="zotero-bibtex" class="slide level2">
+<h2>Zotero-Bibtex</h2>
+<ul>
+<li><p>Zotero permite exportar las referencias en formato Bibtex</p></li>
+<li><p>Puede ser toda la colección o una parte (carpeta)</p></li>
+<li><p>2 alternativas:</p>
+<ul>
+<li>manual</li>
+<li>automatizada</li>
+</ul></li>
+</ul>
+</section>
+<section id="zotero-bibtex-exportación-manual" class="slide level2">
+<h2>Zotero-Bibtex: exportación manual</h2>
+<p><br></p>
+<p><img data-src="images/zoteroexport.png"></p>
+<ul>
+<li><p>Carpeta -&gt; boton derecho -&gt; export -&gt; formato Bibtex</p></li>
+<li><p>guardar archivo .bib en carpeta del proyecto</p></li>
+</ul>
+</section>
+<section id="zotero-better-bibtex-exportación-automatizada-y-sincronizada" class="slide level2">
+<h2>Zotero-Better Bibtex: exportación automatizada y sincronizada</h2>
+<ul>
+<li><p><strong>BetterBibTex</strong>: Zotero plug-in que permite exportación automática y sincronizada</p></li>
+<li><p>Instalación:</p>
+<ul>
+<li><p>bajar archivo desde el sitio del desarrollador: <a href="https://retorque.re/zotero-better-bibtex/installation/" class="uri">https://retorque.re/zotero-better-bibtex/installation/</a></p></li>
+<li><p>en Zotero: Tools -&gt; plugins -&gt; ruedita dentada -&gt; install add-on from file</p></li>
+<li><p>reiniciar Zotero</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="zotero-better-bibtex" class="slide level2">
+<h2>Zotero-Better Bibtex</h2>
+<p><img data-src="images/betterbibtex.png"></p>
+</section>
+<section id="zotero-better-bibtex-exportando-referencias" class="slide level2">
+<h2>Zotero-Better Bibtex: Exportando referencias</h2>
+<ul>
+<li><p>puede ser colección completa o carpetas específicas</p></li>
+<li><p>posicionarse sobre carpeta, botón derecho y <code>Export collection</code></p>
+<pre><code>- Formato: Better BibTex
+- Keep updated (sincronización automática)
+- dar ruta hacia carpeta del proyecto</code></pre></li>
+<li><p>precaución: no caracteres especiales ni espacios en el nombre del archivo .bib</p></li>
+</ul>
+</section>
+<section id="zotero-better-bibtex---exportando-referencias" class="slide level2">
+<h2>Zotero-Better Bibtex - Exportando referencias</h2>
+<p><img data-src="images/exportbibtex.gif"></p>
+</section>
+<section id="zotero-bibtex-consideraciones-sobre-llaves" class="slide level2">
+<h2>Zotero-bibtex: consideraciones sobre llaves</h2>
+<ul>
+<li><p>multiples formas de organizar las llaves Bibtex</p></li>
+<li><p>mantener un mismo formato es relevante, sobre todo para trabajo colaborativo</p></li>
+<li><p>se generan desde la pestaña Citation Keys de BetterBibTex</p></li>
+<li><p>Recomendación:</p>
+<ul>
+<li><code>auth.lower+"_"+shorttitle(1).lower+"_"+year</code></li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="citando-en-texto-plano" class="title-slide slide level1 center">
+<h1>3. Citando en texto plano</h1>
+
+</section>
+<section id="para-citar-en-texto-plano" class="slide level2">
+<h2>Para citar en texto plano:</h2>
+<ol type="a">
+<li>Agregar el archivo .bib al preámbulo del documento</li>
+<li>Agregar archivo de formato de bibliografía (csl)</li>
+<li>Insertar citas</li>
+</ol>
+</section>
+<section id="bib-y-csl-en-yaml" class="slide level2">
+<h2>bib y csl en YAML</h2>
+<div class="slarge highlight-container-red">
+<pre><code>````         
+---
+title: "My document"
+bibliography: input/bib/merit-factorial.bib
+csl: "input/bib/apa6.csl"
+---
+
+ Y aquí comienza el documento ...
+````</code></pre>
+</div>
+</section>
+<section id="sobre-.csl" class="slide level2">
+<h2>Sobre .csl</h2>
+<ul>
+<li><p>además de las referencias en .bib, necesitamos poder dar el estilo de formato deseado a citas y bibliografía, mediante archivos <strong>csl</strong> (citation style language)</p></li>
+<li><p>existen múltiples estilos de citación (alrededor de 10.000)</p></li>
+<li><p>los más usados: APA, ASA, Chicago</p></li>
+<li><p>estos estilos (en archivos csl) se pueden bajar desde repositorios, se recomienda el siguiente: <a href="https://www.zotero.org/styles" class="uri">https://www.zotero.org/styles</a></p></li>
+</ul>
+</section>
+<section id="citando" class="slide level2">
+<h2>Citando</h2>
+<p>La forma de citar es a través de la .red[clave que identifica la referencia], que es la que aparece al principio de cada una, y se agrega una @. Ej:</p>
+<div class="slarge">
+<pre><code>- Tal como señala @sabbagh_dimension_2003, los principales resultados ...</code></pre>
+</div>
+<p>Al renderizar, esto genera:</p>
+<ul>
+<li><strong>Tal como señala Sabbagh (2003), los principales resultados …</strong></li>
+</ul>
+<p>Y además, agrega la bibliografía al final del documento.</p>
+</section>
+<section id="opciones-de-citación" class="slide level2">
+<h2>Opciones de citación</h2>
+<p><br></p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Se escribe</th>
+<th>Renderiza</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Como dice @sabbagh_dimension_2003</code></td>
+<td>Como dice Sabbagh (2003)</td>
+</tr>
+<tr class="even">
+<td><code>Evidencia señala [@sabbagh_dimension_2003]</code></td>
+<td>Evidencia señala (Sabbagh, 2020)</td>
+</tr>
+<tr class="odd">
+<td><code>Sabbagh [@sabbagh_dimension_2003, pp.35] dice ...</code></td>
+<td>Sabbagh (2020, p.35) dice …</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Más de una cita: separadas por <strong>;</strong></li>
+</ul>
+</section>
+<section id="citando-en-documentos-markdownquarto-en-r" class="slide level2">
+<h2>Citando en documentos Markdown/Quarto en R</h2>
+<p>Diferentes formas, pero lo más fácil:</p>
+<ul>
+<li>visual mode</li>
+<li>presionar @ y se despliegan las referencias del .bib</li>
+<li>insert -&gt; citations</li>
+</ul>
+</section></section>
+<section>
+<section id="repositorios-y-apertura" class="title-slide slide level1 center" data-background-color="#5f5758">
+<h1>Repositorios y apertura</h1>
+
+</section>
+<section id="section-4" class="slide level2" data-background-color="black">
+<h2></h2>
+<div style="font-size: 150%;">
+<p>La escritura en texto simple (como Markdown o Quarto) permite implementar un sistema de control de versiones, además de herramientas de respaldo, colaboración y comunicación</p>
+</div>
+</section>
+<section id="el-origen-abriendo-un-sistema-operativo" class="slide level2">
+<h2>El origen: Abriendo un sistema operativo</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/torvalds.png"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p>Linus Torvalds, 1991 (21 años)</p></li>
+<li><p>Crea sistema operativo libre (<strong>Linux</strong>) y lo abre a la colaboración. Postea:</p>
+<ul>
+<li>“I’m doing a (free) operating system (just a hobby, won’t be big and professional…”</li>
+</ul></li>
+<li><p><a href="https://www.youtube.com/watch?v=o8NPllzkFhE&amp;ab_channel=TED">TED talk</a></p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="git" class="slide level2">
+<h2>Git</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="images/git.png"></p>
+</div><div class="column" style="width:60%;">
+<ul>
+<li><p>es una especie de memoria o registro local que guarda información sobre:</p>
+<ul>
+<li>quién hizo un cambio</li>
+<li>cuándo lo hizo</li>
+<li>qué hizo</li>
+</ul></li>
+<li><p>mantiene la información de todos los cambios en la historia de la carpeta / repositorio local</p></li>
+<li><p>se puede sincronizar con un repositorio remoto (ej. Github)</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="gitgithub" class="slide level2">
+<h2>Git/github</h2>
+<div style="font-size: 80%;">
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="images/github.png"></p>
+</div><div class="column" style="width:70%;">
+<ul>
+<li><p>actualmente, Git / Github posee más de 100 millones de repositorios</p></li>
+<li><p>mayor fuente de código en el mundo</p></li>
+<li><p>ha transitado desde el mundo de desarrollo de software hacia distintos ámbitos de trabajo colaborativo y abierto</p></li>
+<li><p>entorno de trabajo que favorece la ciencia abierta</p></li>
+<li><p>El 4 de junio de 2018 Microsoft compró GitHub por la cantidad de 7500 millones de dólares. Al inicio, el cambio de propietario generó preocupaciones y la salida de algunos proyectos de este sitio; sin embargo, no fueron representativos. GitHub continúa siendo la plataforma más importante de colaboración para proyectos de código abierto.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="section-5" class="slide level2" style="font-size: 120%;" data-background-color="#5f5758&quot;">
+<h2></h2>
+<ul>
+<li><p>Git no es un registro de versiones de archivos específicos, sino de una carpeta completa</p></li>
+<li><p>Guarda <em>“fotos”</em> de momentos específicos de la carpeta, y esta foto se <em>saca</em> mediante un <span class="red">commit</span></p></li>
+</ul>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<p><img data-src="images/gitflow.jpeg"></p>
+</section>
+<section id="commits" class="slide level2">
+<h2>Commits</h2>
+<ul>
+<li><p>El <strong>commit</strong> es el procedimiento fundamental del control de versiones</p></li>
+<li><p>Git no registra cualquier cambio que se “guarda”, sino los que se “comprometen” (commit).</p></li>
+<li><p>En un <strong>commit</strong></p>
+<ul>
+<li>se seleccionan los archivos cuyo cambio se desea registrar (<em>stage</em>)</li>
+<li>se registra lo que se está comprometiendo en el cambio (mensaje de commit)</li>
+</ul></li>
+</ul>
+</section>
+<section id="cuándo-hacer-un-commit" class="slide level2">
+<h2>¿Cuándo hacer un commit?</h2>
+<ul>
+<li><p>según conveniencia</p></li>
+<li><p>sugerencias:</p>
+<ul>
+<li><p>que sea un momento que requiera registro (momento de foto)</p></li>
+<li><p>no para cambios menores</p></li>
+<li><p>no esperar muchos cambios distintos que puedan hacer perder el sentido del commit</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="algunos-términos" class="slide level2">
+<h2>Algunos términos</h2>
+<div style="font-size: 75%;">
+<table>
+<colgroup>
+<col style="width: 21%">
+<col style="width: 78%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Remote</td>
+<td>Un repositorio almacenado en Github, no en el equipo</td>
+</tr>
+<tr class="even">
+<td>Clonar</td>
+<td>Para descargar una copia completa de los datos de un repositorio de Github.com, incluidas todas las versiones de cada archivo y carpeta.</td>
+</tr>
+<tr class="odd">
+<td>Branch</td>
+<td>Una versión paralela de los archivos contenidos en el repositorio, pero que no afecta a la rama principal.</td>
+</tr>
+<tr class="even">
+<td>Fork</td>
+<td>Un nuevo repositorio que comparte la configuración de visibilidad y código con el repositorio “ascendente” original.</td>
+</tr>
+<tr class="odd">
+<td>Upstream</td>
+<td>La branch de un repositorio original que se ha <em>forkeado</em> o clonado. La branch correspondiente de la branch clonada se denomina “descendiente”.</td>
+</tr>
+<tr class="even">
+<td>Merge</td>
+<td>Para aplicar los cambios de una branch en otra.</td>
+</tr>
+<tr class="odd">
+<td>Pull request</td>
+<td>Una solicitud para combinar los cambios de una branch en otra.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="branch" class="slide level2">
+<h2>Branch</h2>
+<ul>
+<li><p>Una <strong>branch</strong> es una versión paralela de los archivos contenidos en el repositorio, pero que no afecta a la rama principal.</p></li>
+<li><p>Permite el trabajo paralelo en distintos archivos.</p></li>
+</ul>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<p><img data-src="images/branches.png"></p>
+</section>
+<section id="conflicted-branch" class="slide level2">
+<h2>Conflicted branch</h2>
+<ul>
+<li>Cuando trabajamos en el mismo archivo -y los modificamos- podemos generar un <strong>conflicto de versiones</strong> de un archivo cuando otra persona quiera hacer modificaciones</li>
+</ul>
+<p><img data-src="images/conflicted-branch.png"></p>
+</section>
+<section id="cómo-evitar-los-conflictos-de-versiones" class="slide level2">
+<h2>¿Cómo evitar los conflictos de versiones?</h2>
+<ul>
+<li><p>Lo mejor es trabajar coordinadamente en tareas separadas (en momentos o archivos diferentes)</p></li>
+<li><p>Mediante <em>pull request</em>, donde una persona a cargo decide qué modificaciones aceptar y cuando.</p></li>
+</ul>
+</section></section>
+<section id="práctica-generando-un-reporte-en-quarto-con-citas-en-una-página-github" class="title-slide slide level1 center" data-background-color="#5f5758">
+<h1>Práctica 👩‍💻: generando un reporte en Quarto con citas en una página Github</h1>
+
+</section>
+
 <section id="gracias-por-su-atención" class="title-slide slide level1 center">
-<h1>Gracias por su atención!</h1>
+<h1>Gracias por su atención!🫶🏻</h1>
 <ul>
 <li><strong>Github del proyecto:</strong> <a href="https://github.com/educacion-meritocracia" class="uri">https://github.com/educacion-meritocracia</a></li>
 </ul>
-</section>
-<section id="referencias" class="slide level2">
-<h2>Referencias</h2>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 

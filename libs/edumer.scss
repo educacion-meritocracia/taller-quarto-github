@@ -31,7 +31,7 @@ $heading1TextShadow: $headingTextShadow;
 
 
 $heading1Size: 1.70em;
-$heading2Size: 1.70em;
+$heading2Size: 1.30em;
 $heading3Size: 1.00em;
 $heading4Size: 0.5em;
 
@@ -364,4 +364,15 @@ blockquote {
   padding: 15px;
   border-radius: 5px;
   color: black; /* Optional: Adjust text color for contrast */
+}
+
+.reveal .slide .our-turn {
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  border-left: solid 5px #5A799D;
+  background-color: #5A799D50;
 }
