@@ -1,0 +1,389 @@
+---
+pagetitle: "Introducción a Quarto y Github"
+Author: Equipo EDUMER
+bibliography: "input/bib/merit-factorial.bib"
+csl: "input/bib/apa6.csl"
+lang: es
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: "#>"
+    R.options:
+      
+      knitr.graphics.auto_pdf: true
+format:
+  revealjs:
+    #logo: images/edumer.png
+    slide-number: true
+    theme: "libs/edumer.scss"
+    auto-stretch: false
+    title-slide-attributes:
+      visibility: false
+    transition: fade
+    transition-speed: slow
+# data-background-image: images/cover.jpg
+# data-background-size: cover
+    auto-play-media: true
+    mathjax: "default"
+  pdf:
+    format: beamer 
+    keep-tex: true  # Debug LaTeX output if needed
+    slideOptions:
+      spacing: 1.5em # Adjust spacing as needed
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(knitr)
+knitr::opts_chunk$set(echo = F,
+                      warning = F,
+                      error = F, 
+                      message = F) 
+
+options(kableExtra.html.bsTable = T)
+options(knitr.kable.NA = "")
+```
+
+```{r}
+#| label: packages
+#| include: false
+
+if (! require("pacman")) install.packages("pacman")
+
+pacman::p_load(tidyverse,
+               sjmisc, 
+               here,
+               lavaan,
+               psych,
+               corrplot,
+               ggdist,
+               patchwork,
+               sjlabelled,
+               semTools,
+               gtools)
+
+
+options(scipen=999)
+rm(list = ls())
+```
+
+```{r}
+#| label: data
+#| include: false
+#| echo: false
+
+load(file = here("output", "data", "db1_proc.RData"))
+load(file = here("output", "data", "db_long_proc.RData"))
+load(file = here("output", "results.RData"))
+
+```
+
+:::::: columns
+::: {.column width="25%"}
+![](images/edumer.png)
+
+![](images/qrcode.png)
+:::
+
+:::: {.column .column-right width="75%"}
+# **Introducción a Quarto y Github**
+
+------------------------------------------------------------------------
+
+**Juan Carlos Castillo, Andreas Laffert & Kevin Carrasco**
+
+::: {.red2 .medium}
+**Departamento de Sociología, Universidad de Chile**
+
+**Instituto de Sociología, Pontificia Universidad Católica de Chile**
+
+**Centro de Estudios de Conflicto y Cohesión Social - COES**
+:::
+
+Taller interno
+
+24 Enero 2025, Chile
+::::
+::::::
+
+::: notes
+Aquí mis notas
+:::
+
+# Reproducibilidad {data-background-color="#5f5758"}
+
+# Citas reproducibles {data-background-color="#5f5758"}
+
+## ¿Cómo trabajar con citas cuando se escribe en texto plano?
+
+<br>
+
+3 cosas a considerar:
+
+<br>
+
+### 1. Almacenamiento de referencias: Bibtex
+
+### 2. Generación de archivo de referencias: Zotero / BetterBibTex
+
+### 3. Citando en texto plano (markdown, Rmarkdown, Quarto y csl)
+
+# 1. Almacenamiento de referencias
+
+## 
+
+::::::: v-center-container
+:::::: columns
+::: {.column width="30%"}
+![](images/BibTeX_logo.svg.png)
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="50%"}
+-   formato de almacenamiento de citas en texto plano (no es un programa)
+
+-   Un archivo Bibtex tiene extensión **.bib**, donde deben estar almacenadas todas las referencias citadas en el texto
+:::
+::::::
+:::::::
+
+## Ejemplo referencia en Bibtex
+
+![](images/bibtex-record.png)
+
+## Archivo Bibtex (.bib)
+
+-   un archivo bibtex tiene múltiples referencias una después de la otra, el orden no es relevante.
+
+-   lo central en cada referencia es la llave de referencia o **citation key**, que está al principio e identifica cada referencia
+
+-   cada referencia posee una serie de campos con información necesaria para poder citar
+
+-   este formato se puede ingresar manualmente, copiar y pegar de otras fuentes, o automatizar desde software de gestión de referencias (detalles más adelante)
+
+-   [link a ejemplo archivo *merit-factorial.bib*](https://raw.githubusercontent.com/educacion-meritocracia/taller-quarto-github/refs/heads/main/input/bib/merit-factorial.bib)
+
+# 2. Generación de archivo de referencias
+
+## Utilizando Bibtex en escritura en texto simple
+
+-   es claro que tanto la generación manual de registros Bibtex como la incorporación manual de citas es un gran desincentivo a su uso.
+
+-   la simplificación y automatización de esto pasa por dos procesos:
+
+    -   Automatizar la **generación** de un archivo .bib desde un software de gestión de referencias (Zotero - BetterBibTex)
+
+    -   Automatizar la **incorporación** de citas al documento
+
+## 
+
+![](images/refman.jpg){width="80%" fig-align="center"}
+
+## Software de gestión de referencias
+
+-   los software de gestión de referencias bibliográficas permiten almacenar, organizar y luego utilizar las referencias
+
+-   diferentes alternativas de software de gestión de referencias bibliográficas: Endnote, Mendeley, Refworks, Zotero
+
+-   en adelante vamos a ejemplificar con **Zotero**, que es un software libre y de código abierto
+
+## 
+
+::: {.slarge .v-center-container .red}
+Vamos a usar Zotero para guardar y organizar nuestras referencias bibliográficas, y como *bot* para generar un archivo .bib
+:::
+
+## Zotero
+
+::::::: v-center-container
+:::::: columns
+::: {.column width="30%"}
+![](images/zotero.png){fig-align="center"}
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="50%"}
+-   instalar [https://www.zotero.org](zotero.org)
+
+-   además del programa, instalar "conector" para el navegador ( extensión que permite almacenar directamente con 1 click)
+:::
+::::::
+:::::::
+
+## Zotero: vista general
+
+### ![](https://www.zotero.org/static/images/home/screenshot-1.4.png)
+
+## Almacenamiento 1: vía conector navegador
+
+Cuando hay una referencia presente en la página, ir al botón del conector y se guarda (Zotero debe estar abierto)
+
+(la referencia se almacena en la carpeta que está activa en Zotero, se puede cambiar al momento de guardar)
+
+![](images/conector.png)
+
+## Almacenamiento 2: vía identificador DOI / ISBN / ISSN \]
+
+![](images/doizotero.png)\]
+
+## Almacenamiento 3: manual
+
+Llenando los campos uno por uno:
+
+![](images/zoteromanual.png)
+
+## 
+
+::: {.slarge .highlight-container-red .v-center-container}
+Al almacenar fijarse que los campos necesarios están completos y que los nombres de los mismos autores coinciden entre citas
+:::
+
+## Zotero
+
+-   más información sobre manejo y capacidades:
+
+<https://www.youtube.com/watch?v=Uxv3aE4XoNY>
+
+... y tutoriales y guías varios en la red
+
+## Zotero-Bibtex
+
+-   Zotero permite exportar las referencias en formato Bibtex
+
+-   Puede ser toda la colección o una parte (carpeta)
+
+-   2 alternativas:
+
+    -   manual
+    -   automatizada
+
+## Zotero-Bibtex: exportación manual
+
+<br>
+
+![](images/zoteroexport.png)
+
+-   Carpeta -\> boton derecho -\> export -\> formato Bibtex
+
+-   guardar archivo .bib en carpeta del proyecto
+
+## Zotero-Better Bibtex: exportación automatizada y sincronizada
+
+-   **BetterBibTex**: Zotero plug-in que permite exportación automática y sincronizada
+
+-   Instalación:
+
+    -   bajar archivo desde el sitio del desarrollador: <https://retorque.re/zotero-better-bibtex/installation/>
+
+    -   en Zotero: Tools -\> plugins -\> ruedita dentada -\> install add-on from file
+
+    -   reiniciar Zotero
+
+## Zotero-Better Bibtex
+
+![](images/betterbibtex.png)
+
+## Zotero-Better Bibtex: Exportando referencias
+
+-   puede ser colección completa o carpetas específicas
+
+-   posicionarse sobre carpeta, botón derecho y `Export collection`
+
+    ```         
+    - Formato: Better BibTex
+    - Keep updated (sincronización automática)
+    - dar ruta hacia carpeta del proyecto
+    ```
+
+-   precaución: no caracteres especiales ni espacios en el nombre del archivo .bib
+
+## Zotero-Better Bibtex - Exportando referencias
+
+![](images/exportbibtex.gif)
+
+## Zotero-bibtex: consideraciones sobre llaves
+
+-   multiples formas de organizar las llaves Bibtex
+
+-   mantener un mismo formato es relevante, sobre todo para trabajo colaborativo
+
+-   se generan desde la pestaña Citation Keys de BetterBibTex
+
+-   Recomendación:
+
+    -   `auth.lower+"_"+shorttitle(1).lower+"_"+year`
+
+# 3. Citando en texto plano
+
+## Para citar en texto plano:
+
+a.  Agregar el archivo .bib al preámbulo del documento
+b.  Agregar archivo de formato de bibliografía (csl)
+c.  Insertar citas
+
+## bib y csl en YAML
+
+::: {.slarge .highlight-container-red}
+```         
+---
+title: "My document"
+bibliography: input/bib/merit-factorial.bib
+csl: "input/bib/apa6.csl"
+---
+
+ Y aquí comienza el documento ...
+```
+:::
+
+## Sobre .csl
+
+-   además de las referencias en .bib, necesitamos poder dar el estilo de formato deseado a citas y bibliografía, mediante archivos **csl** (citation style language)
+
+-   existen múltiples estilos de citación (alrededor de 10.000)
+
+-   los más usados: APA, ASA, Chicago
+
+-   estos estilos (en archivos csl) se pueden bajar desde repositorios, se recomienda el siguiente: <https://www.zotero.org/styles>
+
+## Citando
+
+La forma de citar es a través de la .red\[clave que identifica la referencia\], que es la que aparece al principio de cada una, y se agrega una \@. Ej:
+
+::: {slarge}
+```         
+- Tal como señala @sabbagh_dimension_2003, los principales resultados ...
+```
+:::
+
+Al renderizar, esto genera:
+
+-   **Tal como señala Sabbagh (2003), los principales resultados ...**
+
+Y además, agrega la bibliografía al final del documento.
+
+## Opciones de citación
+
+<br>
+
+| Se escribe | Renderiza |
+|----|----|
+| `Como dice @sabbagh_dimension_2003` | Como dice Sabbagh (2003) |
+| `Evidencia señala [@sabbagh_dimension_2003]` | Evidencia señala (Sabbagh, 2020) |
+| `Sabbagh [@sabbagh_dimension_2003, pp.35] dice ...` | Sabbagh (2020, p.35) dice ... |
+
+-   Más de una cita: separadas por **;**
+
+## Citando en documentos Markdown/Quarto en R
+
+Diferentes formas, pero lo más fácil:
+
+-   visual mode
+-   presionar \@ y se despliegan las referencias del .bib
+-   insert -\> citations

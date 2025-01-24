@@ -12,7 +12,7 @@ $backgroundColor: #ffffff;
 
 // Primary/body text
 $mainFont: 'Noto Serif', sans-serif; /* Updated font */
-$mainFontSize: 27px;
+$mainFontSize: 35px;
 $mainColor: #272828;
 
 // Vertical spacing between blocks of text
@@ -349,4 +349,19 @@ img, video, iframe {
 blockquote {
   border-left: solid 5px #cb4b16;
   padding-left: 1em;
+}
+
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.highlight-container-red {
+  background-color: rgb(230, 111, 111);
+  padding: 15px;
+  border-radius: 5px;
+  color: black; /* Optional: Adjust text color for contrast */
 }
