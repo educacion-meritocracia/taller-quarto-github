@@ -1128,6 +1128,9 @@ La escritura en texto simple (como Markdown o Quarto) permite implementar un sis
 
 # Práctica 👩‍💻: generando un reporte en Quarto con citas en una página Github {data-background-color="#5f5758"}
 
+# Práctica 👩‍💻: Github y github pages {data-background-color="#5f5758"}
+
+-   **Link directo:** <https://educacion-meritocracia.github.io/taller-quarto-github/taller-github.html>
 
 # Gracias por su atención!🫶🏻
 
